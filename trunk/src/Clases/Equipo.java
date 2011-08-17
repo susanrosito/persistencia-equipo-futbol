@@ -1,12 +1,12 @@
 package Clases;
 
-import Interfaces.FormacionStrategy;
 import Interfaces.Nombrable;
 
-public class Equipo implements FormacionStrategy , Nombrable {
+public class Equipo implements  Nombrable {
 
 	Tecnico tecnico;
 	private String nombre;
+	
 
 
 	public Formacion armarFormacion(Equipo e) {
@@ -19,5 +19,7 @@ public class Equipo implements FormacionStrategy , Nombrable {
 		
 		return this.nombre;
 	}
-	
+
+
+
 }

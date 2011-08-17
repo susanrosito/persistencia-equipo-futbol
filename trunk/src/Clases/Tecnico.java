@@ -3,10 +3,11 @@ package Clases;
 import Interfaces.FormacionStrategy;
 import Interfaces.Nombrable;
 
-public class Tecnico implements FormacionStrategy,  Nombrable {
+public class Tecnico implements Nombrable {
 
 
 	private String nombre;
+	private FormacionStrategy formacionStrategy;
 
 	public String getNombre() {
 		return this.nombre;
@@ -14,8 +15,7 @@ public class Tecnico implements FormacionStrategy,  Nombrable {
 
 	
 	public Formacion armarFormacion(Equipo e) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.formacionStrategy.armarFormacion(e);
 	}
 
 }

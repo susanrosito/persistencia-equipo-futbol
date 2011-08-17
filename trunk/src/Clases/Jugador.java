@@ -21,6 +21,16 @@ public class Jugador implements Nombrable, Habilidad {
 		return 0;
 	}
 
+
+	public void setHabilidades(List<HabilidadImp> habilidades) {
+		this.habilidades = habilidades;
+	}
+
+
+	public List<HabilidadImp> getHabilidades() {
+		return habilidades;
+	}
+
 	
 	
 
