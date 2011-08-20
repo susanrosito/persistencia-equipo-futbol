@@ -7,6 +7,11 @@ public class HabilidadImp implements Habilidad {
 	Posicion posicion;
 	int valor;
 
+	public HabilidadImp(Posicion p, int val){
+		this.posicion = p;
+		this.valor = val;
+	}
+	
 	public Posicion getPosicion() {
 		return posicion;
 	}
@@ -25,7 +30,10 @@ public class HabilidadImp implements Habilidad {
 
 	public int getValor(Posicion p) {
 
-		return this.valor;
+		if(p == this.getPosicion()){
+			return this.valor;
+		}
+		else{return 0;}
 	}
 
 }

@@ -2,7 +2,6 @@ package Clases;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import Interfaces.FormacionStrategy;
 
 public class FormacionStrategyImp implements FormacionStrategy {
@@ -50,10 +49,10 @@ public class FormacionStrategyImp implements FormacionStrategy {
 			}
 		}
 		ju.remove(posicion);
-		// Lo que falta es que titular tenga un constructor que reciba una posicion y un jugador
-		return Titular(p,jugadorElegido);
+		// Lo que falta es que titular tenga un constructor que reciba una posicion y un jugador	
+		return new Titular(p ,jugadorElegido);
 	}
-	
+
 	public List<Posicion> getPosiciones() {
 		return posiciones;
 	}

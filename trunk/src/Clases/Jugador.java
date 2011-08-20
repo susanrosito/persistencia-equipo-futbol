@@ -2,6 +2,7 @@ package Clases;
 
 
 import java.util.List;
+import java.util.Map;
 
 import Interfaces.Habilidad;
 import Interfaces.Nombrable;
@@ -18,7 +19,14 @@ public class Jugador implements Nombrable, Habilidad {
 
 	
 	public int getValor(Posicion p) {
-		return 0;
+		HabilidadImp habilidad = null;
+		for(HabilidadImp hab: this.getHabilidades()){
+			habilidad = hab;
+			if(hab.getPosicion() == p){
+				break;
+			}
+		}
+		return habilidad.getValor(p);
 	}
 
 
