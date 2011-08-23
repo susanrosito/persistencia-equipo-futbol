@@ -6,51 +6,67 @@ import Interfaces.FormacionStrategy;
 
 public class FormacionStrategyImp implements FormacionStrategy {
 	private List<Posicion> posiciones;
-	
+
+	public FormacionStrategyImp(ArrayList<Posicion> posiciones) {
+
+		this.posiciones = posiciones;
+
+	}
+
 	@Override
 	public Formacion armarFormacion(Equipo e) {
-	// En realidad voy a copiar la lista del equipo.
-		ArrayList<Jugador>	jugadores = new ArrayList<Jugador>();
-	// creo una formacion: 
-		Formacion formacionADevolver = new Formacion();
-		
-	//Recorro para ver quien es el elegido. Para cada posicion cuando se terminen las posiciones.
-	// Ya se eligieron a todos los titulares los restantes son suplentes y ect..
-		// puedo hacerlo en subTareas // elejir los mejores.
-		Titular jugadorActual;
-		for (int i = 0; i < this.getPosiciones().size(); i++) {
-			
-			Posicion posicionActual = this.getPosiciones().get(i);
-			jugadorActual = this.buscarMJugador(jugadores, posicionActual);
-			formacionADevolver.getTitulares().add(jugadorActual);
-			
-		}
-			formacionADevolver.getSuplentes().addAll(jugadores);
-			formacionADevolver.setEquipo(e);
-	// Creo la formacion.... tanto la lista de titulares y suplentes y le paso el equipo.
-	
-	
-	return formacionADevolver;
-		
+
+		ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+		Formacion formacion = new Formacion();
+		this.buscarLosTitulares(formacion, jugadores);
+		formacion.getSuplentes().addAll(jugadores);
+		formacion.setEquipo(e);
+
+		return formacion;
+
 	}
-	
-	public Titular buscarMJugador(ArrayList<Jugador> ju , Posicion p){
+
+	/**
+	 * PRECONDICION: Encuentra por lo menos un jugador mayor a los demas.
+	 * PROPOSITO: Busca al mejor jugador para la posicion que le pasan por
+	 * parametro.
+	 * 
+	 * @param Jugador
+	 *            jugadores
+	 * @param Pösicion
+	 *            pos
+	 * 
+	 * @return Titular
+	 */
+	public Titular buscarMJugador(ArrayList<Jugador> jugadores, Posicion pos) {
 		int mayor = 0;
 		int valor;
-		int posicion;
-		Jugador jugadorElegido;
-		for (int i = 0; i < ju.size(); i++) {
-			Jugador jugador = ju.get(i);
-			valor = jugador.getValor(p);
+		Jugador jugadorElegido = new Jugador();
+
+		for (int i = 0; i < jugadores.size(); i++) {
+			Jugador jugador = jugadores.get(i);
+			valor = jugador.getValor(pos);
 			if (valor > mayor) {
 				mayor = valor;
 				jugadorElegido = jugador;
-			    posicion = i;
 			}
 		}
-		ju.remove(posicion);
-		// Lo que falta es que titular tenga un constructor que reciba una posicion y un jugador	
-		return new Titular(p ,jugadorElegido);
+		return new Titular(pos, jugadorElegido);
+	}
+
+	public Formacion buscarLosTitulares(Formacion formacion,
+			ArrayList<Jugador> jugadores) {
+
+		Titular titular;
+		for (int i = 0; i < this.getPosiciones().size(); i++) {
+			Posicion posicionActual = this.getPosiciones().get(i);
+			titular = this.buscarMJugador(jugadores, posicionActual);
+			formacion.getTitulares().add(titular);
+
+		}
+
+		return formacion;
+
 	}
 
 	public List<Posicion> getPosiciones() {
@@ -60,6 +76,5 @@ public class FormacionStrategyImp implements FormacionStrategy {
 	public void setPosiciones(List<Posicion> posiciones) {
 		this.posiciones = posiciones;
 	}
-	
 
 }
