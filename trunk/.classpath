@@ -8,5 +8,9 @@
 	<classpathentry kind="lib" path="C:/Users/Susy/Downloads/easymock-3.0/easymock-3.0/easymock-3.0-javadoc.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Susy/Downloads/easymock-3.0/easymock-3.0/easymock-3.0-samples.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Susy/Downloads/easymock-3.0/easymock-3.0/easymock-3.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/CHS/CHS/UNQ/Laboratorio de Programación/tpFinalYOtros/objenesis-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/CHS/CHS/UNQ/Laboratorio de Programación/tpFinalYOtros/cglib-nodep-2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/CHS/CHS/UNQ/Laboratorio de Programación/tpFinalYOtros/easymock-3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/CHS/CHS/UNQ/Laboratorio de Programación/tpFinalYOtros/easymockclassextension-3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
