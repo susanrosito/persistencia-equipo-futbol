@@ -8,7 +8,7 @@ import junit.framework.TestCase;
 import static org.easymock.EasyMock.*;
 
 
-public class EquipoTest extends TestCase {
+public class TestEquipo extends TestCase {
   Equipo testEquipo;
   String nombre;
   Tecnico tec;
