@@ -8,7 +8,7 @@ import Clases.Posicion;
 import static org.easymock.EasyMock.*;
 import junit.framework.TestCase;
 
-public class FormacionStrategyImpTest extends TestCase {
+public class TestFormacionStrategyImp extends TestCase {
 
 	 FormacionStrategyImp formacionImp;
 	 ArrayList<Jugador> jugadores;
