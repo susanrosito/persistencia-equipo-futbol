@@ -1,5 +1,6 @@
 package Tests;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Clases.HabilidadImp;
@@ -17,8 +18,6 @@ public class TestJugador extends TestCase {
 	HabilidadImp mockHab2;
 	HabilidadImp mockHab3;
 	List<HabilidadImp> habilidades;
-	Posicion pos1;
-	Posicion pos2;
 	Jugador jugador;
 	
 	
@@ -27,8 +26,7 @@ public class TestJugador extends TestCase {
 		this.mockHab1 = createMock(HabilidadImp.class);
 		this.mockHab2 = createMock(HabilidadImp.class);
 		this.mockHab3 = createMock(HabilidadImp.class);
-		this.pos1 = createMock(Posicion.class);
-		this.pos2 = createMock(Posicion.class);
+		this.habilidades = new ArrayList<HabilidadImp>();
 		this.habilidades.add(mockHab1);
 		this.habilidades.add(mockHab2);
 		this.habilidades.add(mockHab3);
@@ -36,12 +34,28 @@ public class TestJugador extends TestCase {
 	}
 	
 	public void testGetValor(){
-		expect(this.mockHab1.getValor(Posicion.ARQUERO)).andReturn(0);
 		expect(this.mockHab1.getValor(Posicion.DELANTERO)).andReturn(8);
+		expect(this.mockHab1.getValor(Posicion.LATERAL)).andReturn(0);
+		expect(this.mockHab1.getValor(Posicion.CENTRAL)).andReturn(0);
+		expect(this.mockHab2.getValor(Posicion.LATERAL)).andReturn(3);
+		expect(this.mockHab2.getValor(Posicion.CENTRAL)).andReturn(0);
+		expect(this.mockHab3.getValor(Posicion.CENTRAL)).andReturn(5);
+		expect(this.mockHab1.getValor(Posicion.MEDIA_PUNTA)).andReturn(0);
+		expect(this.mockHab2.getValor(Posicion.MEDIA_PUNTA)).andReturn(0);
+		expect(this.mockHab3.getValor(Posicion.MEDIA_PUNTA)).andReturn(0);
+		
 		replay(mockHab1);
-		Assert.assertEquals(0, this.jugador.getValor(Posicion.ARQUERO));
+		replay(mockHab2);
+		replay(mockHab3);
+		
 		Assert.assertEquals(8, this.jugador.getValor(Posicion.DELANTERO));
+		Assert.assertEquals(3, this.jugador.getValor(Posicion.LATERAL));
+		Assert.assertEquals(5, this.jugador.getValor(Posicion.CENTRAL));
+		Assert.assertEquals(0, this.jugador.getValor(Posicion.MEDIA_PUNTA));
+		
 		verify(mockHab1);
+		verify(mockHab2);
+		verify(mockHab3);
 		
 				
 	}
