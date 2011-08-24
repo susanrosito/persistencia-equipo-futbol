@@ -9,26 +9,32 @@ import static org.easymock.EasyMock.*;
 
 
 public class TestEquipo extends TestCase {
-  Equipo testEquipo;
+  Equipo tstEquipo;
   String nombre;
   Tecnico tec;
 	protected void setUp()
 	{
 		this.tec = createMock(Tecnico.class);
+		
 		this.nombre= "Alfa";
-		this.testEquipo= new Equipo(this.nombre, tec);
+		this.tstEquipo= new Equipo(this.nombre, tec);
 	}
 	protected void tearDown()
 	{
-		this.testEquipo=null;
+		this.tstEquipo=null;
 	}
-	public void testEquipo (String nombre, Tecnico tec)
+	
+	public void testEquipo ()
 	{
-		Assert.assertEquals(this.nombre, this.testEquipo.getNombre());
-		Assert.assertEquals(this.tec, this.testEquipo.getTecnico());
+		Assert.assertEquals(this.nombre, this.tstEquipo.getNombre());
+		Assert.assertEquals(this.tec, this.tstEquipo.getTecnico());
 	}
 
-	public void testArmarFormacion(Equipo e) {
+	public void testArmarFormacion() {
+		expect(this.tec.armarFormacion(this.tstEquipo));
+		replay(this.tec);
+		this.tstEquipo.armarFormacion();
+		verify(this.tec);
 		
 	}
 
@@ -36,7 +42,7 @@ public class TestEquipo extends TestCase {
 	
 	public void testGetNombre() {
 		
-		Assert.assertEquals(this.nombre, this.testEquipo.getNombre());
+		Assert.assertEquals(this.nombre, this.tstEquipo.getNombre());
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
