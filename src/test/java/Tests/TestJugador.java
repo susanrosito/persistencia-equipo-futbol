@@ -37,12 +37,15 @@ public class TestJugador extends TestCase {
 		expect(this.mockHab1.getValor(Posicion.DELANTERO)).andReturn(8);
 		expect(this.mockHab1.getValor(Posicion.LATERAL)).andReturn(0);
 		expect(this.mockHab1.getValor(Posicion.CENTRAL)).andReturn(0);
-		expect(this.mockHab2.getValor(Posicion.LATERAL)).andReturn(3);
-		expect(this.mockHab2.getValor(Posicion.CENTRAL)).andReturn(0);
-		expect(this.mockHab3.getValor(Posicion.CENTRAL)).andReturn(5);
 		expect(this.mockHab1.getValor(Posicion.MEDIA_PUNTA)).andReturn(0);
+		expect(this.mockHab2.getValor(Posicion.LATERAL)).andReturn(3);
+		expect(this.mockHab2.getValor(Posicion.DELANTERO)).andReturn(0);
+		expect(this.mockHab2.getValor(Posicion.CENTRAL)).andReturn(0);
 		expect(this.mockHab2.getValor(Posicion.MEDIA_PUNTA)).andReturn(0);
+		expect(this.mockHab3.getValor(Posicion.CENTRAL)).andReturn(5);
+		expect(this.mockHab3.getValor(Posicion.DELANTERO)).andReturn(0);
 		expect(this.mockHab3.getValor(Posicion.MEDIA_PUNTA)).andReturn(0);
+		expect(this.mockHab3.getValor(Posicion.LATERAL)).andReturn(0);
 		
 		replay(mockHab1);
 		replay(mockHab2);
