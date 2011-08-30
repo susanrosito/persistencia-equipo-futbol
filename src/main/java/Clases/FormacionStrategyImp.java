@@ -17,7 +17,7 @@ public class FormacionStrategyImp implements FormacionStrategy {
     @Override
     public Formacion armarFormacion(final Equipo e) {
 
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+        List<Jugador> jugadores = e.getJugadores();
         Formacion formacion = new Formacion();
         this.buscarTitulares(formacion, jugadores);
         formacion.getSuplentes().addAll(jugadores);
@@ -38,13 +38,13 @@ public class FormacionStrategyImp implements FormacionStrategy {
      * 
      * @return Titular
      */
-    public Titular buscarMJugador(final ArrayList<Jugador> jugadores, final Posicion pos) {
+    public Titular buscarMJugador(final List<Jugador> jugadores, final Posicion pos) {
 
         int valor;
         Jugador jugadorElegido = jugadores.get(0);
         int mayor = jugadorElegido.getValor(pos);
 
-        for (int i = 0; i < jugadores.size(); i++) {
+        for (int i = 1; i < jugadores.size(); i++) {
             Jugador jugador = jugadores.get(i);
             valor = jugador.getValor(pos);
             if (valor > mayor) {
@@ -55,7 +55,7 @@ public class FormacionStrategyImp implements FormacionStrategy {
         return new Titular(pos, jugadorElegido);
     }
 
-    public Formacion buscarTitulares(final Formacion formacion, final ArrayList<Jugador> jugadores) {
+    public Formacion buscarTitulares(final Formacion formacion, final List<Jugador> jugadores) {
 
         Titular titular;
         for (int i = 0; i < this.getPosiciones().size(); i++) {
