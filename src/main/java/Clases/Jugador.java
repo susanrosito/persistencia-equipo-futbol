@@ -24,13 +24,14 @@ public class Jugador implements Nombrable, Habilidad {
 	
 	public int getValor(Posicion p) {
 		int valor = 0;
+		int maxVal = 0;
 		for(HabilidadImp hab: this.getHabilidades()){
 			valor = hab.getValor(p);
-			if(valor != 0){
-				break;
+			if(valor > maxVal){
+				maxVal = valor;
 			}
 		}
-		return valor;
+		return maxVal;
 	}
 
 
