@@ -8,6 +8,12 @@ public class Formacion {
 	private List<Jugador> Suplentes;
 	private Equipo equipo;
 	
+	public Formacion(List<Titular> ts, List<Jugador> ss, Equipo e){
+		this.Titulares = ts;
+		this.Suplentes = ss;
+		this.equipo = e;
+	}
+	
 	public List<Titular> getTitulares() {
 		return Titulares;
 	}
