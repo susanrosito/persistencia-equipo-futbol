@@ -12,10 +12,11 @@ public class Equipo implements  Nombrable {
 	private String nombre;
 	private List<Jugador> jugadores;
 	
-	public Equipo (String nombre, Tecnico tec)
+	public Equipo (String nombre, Tecnico tec, List<Jugador> jugadores)
 	{
 		this.nombre=nombre;
 		this.tecnico=tec;
+		this.jugadores=jugadores;
 	}
 
 	public Formacion armarFormacion() {
