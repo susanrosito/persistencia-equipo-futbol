@@ -2,23 +2,24 @@ package Clases;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import Interfaces.FormacionStrategy;
 
 public class FormacionStrategyImp implements FormacionStrategy {
     private List<Posicion> posiciones;
 
-    public FormacionStrategyImp(ArrayList<Posicion> posiciones) {
+    public FormacionStrategyImp(final ArrayList<Posicion> posiciones) {
 
         this.posiciones = posiciones;
 
     }
 
     @Override
-    public Formacion armarFormacion(Equipo e) {
+    public Formacion armarFormacion(final Equipo e) {
 
         ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
         Formacion formacion = new Formacion();
-        this.buscarLosTitulares(formacion, jugadores);
+        this.buscarTitulares(formacion, jugadores);
         formacion.getSuplentes().addAll(jugadores);
         formacion.setEquipo(e);
 
@@ -37,10 +38,11 @@ public class FormacionStrategyImp implements FormacionStrategy {
      * 
      * @return Titular
      */
-    public Titular buscarMJugador(ArrayList<Jugador> jugadores, Posicion pos) {
-        int mayor = 0;
+    public Titular buscarMJugador(final ArrayList<Jugador> jugadores, final Posicion pos) {
+
         int valor;
-        Jugador jugadorElegido = new Jugador();
+        Jugador jugadorElegido = jugadores.get(0);
+        int mayor = jugadorElegido.getValor(pos);
 
         for (int i = 0; i < jugadores.size(); i++) {
             Jugador jugador = jugadores.get(i);
@@ -53,7 +55,7 @@ public class FormacionStrategyImp implements FormacionStrategy {
         return new Titular(pos, jugadorElegido);
     }
 
-    public Formacion buscarLosTitulares(Formacion formacion, ArrayList<Jugador> jugadores) {
+    public Formacion buscarTitulares(final Formacion formacion, final ArrayList<Jugador> jugadores) {
 
         Titular titular;
         for (int i = 0; i < this.getPosiciones().size(); i++) {
@@ -68,10 +70,10 @@ public class FormacionStrategyImp implements FormacionStrategy {
     }
 
     public List<Posicion> getPosiciones() {
-        return posiciones;
+        return this.posiciones;
     }
 
-    public void setPosiciones(List<Posicion> posiciones) {
+    public void setPosiciones(final List<Posicion> posiciones) {
         this.posiciones = posiciones;
     }
 
