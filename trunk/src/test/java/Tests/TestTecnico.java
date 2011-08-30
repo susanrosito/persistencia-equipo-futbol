@@ -29,7 +29,7 @@ public class TestTecnico extends TestCase {
 			this.tec= null;
 		}
 		
-		public void testEquipo ()
+		public void testTecnico ()
 		{
 			Assert.assertEquals(this.nombre, this.tec.getNombre());
 			Assert.assertEquals(this.formacionStrategy, this.tec.getFormacionStrategy());
