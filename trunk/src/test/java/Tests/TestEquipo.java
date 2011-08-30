@@ -31,7 +31,7 @@ public class TestEquipo extends TestCase {
 	}
 
 	public void testArmarFormacion() {
-		expect(tec.armarFormacion(this.tstEquipo));
+		expect(tec.armarFormacion(this.tstEquipo)).andReturn(null).once();
 		replay(tec);
 		this.tstEquipo.armarFormacion();
 		verify(tec);
