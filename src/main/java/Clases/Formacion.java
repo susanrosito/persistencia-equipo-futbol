@@ -17,6 +17,12 @@ public class Formacion {
 	public List<Titular> getTitulares() {
 		return Titulares;
 	}
+	
+	public Jugador getSuplente(int n){
+		return this.getSuplentes().get(n);
+		 
+	}
+	
 	public void setTitulares(List<Titular> titulares) {
 		Titulares = titulares;
 	}
