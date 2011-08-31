@@ -33,7 +33,16 @@ public class Jugador implements Nombrable, Habilidad {
 		}
 		return maxVal;
 	}
-
+	
+	public void setHabilidad(HabilidadImp hab, int val){
+		//falta crear habilidad en caso de no encontrarla
+		for(HabilidadImp habAc:this.getHabilidades()){
+			if(habAc.getPosicion() == hab.getPosicion()){
+				habAc.setValor(hab.getValor());
+				break;
+			}
+		}
+	}
 
 	public void setHabilidades(List<HabilidadImp> habilidades) {
 		this.habilidades = habilidades;
