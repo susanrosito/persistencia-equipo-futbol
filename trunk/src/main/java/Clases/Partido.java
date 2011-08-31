@@ -9,7 +9,7 @@ public class Partido {
 	private int golesEquipoB;
 	
 	
-	Partido(Equipo a, Equipo b){
+	public Partido(Equipo a, Equipo b){
 		
 		this.equipoA  = a;
 		this.equipoB = b;
@@ -19,7 +19,7 @@ public class Partido {
 	}
 	
 	
-	protected Equipo getGanador(){
+	public Equipo getGanador(){
 		
 		if(this.golesEquipoA > this.golesEquipoB)
 		{
