@@ -18,10 +18,9 @@ public class FormacionStrategyImp implements FormacionStrategy {
     public Formacion armarFormacion(final Equipo e) {
 
         List<Jugador> jugadores = e.getJugadores();
-        Formacion formacion = new Formacion();
-        this.buscarTitulares(formacion, jugadores);
+        Formacion formacion = new Formacion(new ArrayList<Titular>(), new ArrayList<Jugador>(), e);
+        formacion = this.buscarTitulares(formacion, jugadores);
         formacion.getSuplentes().addAll(jugadores);
-        formacion.setEquipo(e);
 
         return formacion;
 
@@ -67,6 +66,11 @@ public class FormacionStrategyImp implements FormacionStrategy {
 
         return formacion;
 
+    }
+
+    public Jugador getSuplente(final int i, final Formacion f) {
+
+        return f.getSuplentes().get(i);
     }
 
     public List<Posicion> getPosiciones() {
