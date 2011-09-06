@@ -38,7 +38,7 @@ public class FormacionStrategyImp implements FormacionStrategy {
      * @return Titular
      */
     public Titular buscarMJugador(final List<Jugador> jugadores, final Posicion pos) {
-
+        int tomate = 0;
         int valor;
         Jugador jugadorElegido = jugadores.get(0);
         int mayor = jugadorElegido.getValor(pos);
