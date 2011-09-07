@@ -26,6 +26,35 @@ public class FormacionStrategyImp implements FormacionStrategy {
 
     }
 
+
+	/**
+	 * PRECONDICION: Encuentra por lo menos un jugador mayor a los demas.
+	 * PROPOSITO: Busca al mejor jugador para la posicion que le pasan por
+	 * parametro.
+	 * 
+	 * @param Jugador
+	 *            jugadores
+	 * @param P�sicion
+	 *            pos
+	 * 
+	 * @return Titular
+	 */
+	public Titular buscarMJugador(ArrayList<Jugador> jugadores, Posicion pos) {
+		
+		int valor;  
+		Jugador jugadorElegido = jugadores.get(0);
+		int mayor = jugadorElegido.getValor(pos);
+		
+		for (int i = 1; i < jugadores.size(); i++) {
+			Jugador jugador = jugadores.get(i);
+			valor = jugador.getValor(pos);
+			if (valor > mayor) {
+				mayor = valor;
+				jugadorElegido = jugador;
+			}
+		}
+		return new Titular(pos, jugadorElegido);
+	}
     /**
      * PRECONDICION: Encuentra por lo menos un jugador mayor a los demas. PROPOSITO: Busca al mejor jugador para la
      * posicion que le pasan por parametro.
