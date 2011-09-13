@@ -38,7 +38,7 @@ public class ConfigurationTest extends TestCase {
             e.setTecnico(t);
 
             session.saveOrUpdate(e);
-            session.saveOrUpdate(t);
+            // session.saveOrUpdate(t);
 
             // Criteria criteria = session.createCriteria(Equipo.class);
             // criteria.add(Expression.eq("nroCamiseta", 60));
