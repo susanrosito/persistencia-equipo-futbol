@@ -3,12 +3,10 @@ package Tests;
 import junit.framework.TestCase;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.classic.Session;
 
 import Clases.Equipo;
-import Clases.Tecnico;
 
 public class ConfigurationTest extends TestCase {
     @SuppressWarnings({ "unused", "deprecation" })
@@ -19,25 +17,33 @@ public class ConfigurationTest extends TestCase {
         SessionFactory sessionFactory = cfg.buildSessionFactory();
         Session session = sessionFactory.openSession();
 
-        Transaction transaction;
+        org.hibernate.Transaction transaction;
         transaction = session.beginTransaction();
+        session.beginTransaction();
         try {
             // for (int i = 0; i < 1000; i++) {
             // Jugador j = new Jugador("UnNombre" + i, "UnApellido", i);
             // session.saveOrUpdate(j);
             // }
 
-            session.load(Equipo.class, 1);
-            session.load(Tecnico.class, 1);
+            // session.load(Equipo.class, 1);
+            // session.load(Tecnico.class, 1);
 
-            Tecnico t = new Tecnico();
-            t.setNombre("dsdsdsds");
+            // Tecnico t = new Tecnico();
+            // t.setNombre("dsdsdsds");
 
-            Equipo e = new Equipo();
-            e.setNombre("lerolero");
-            e.setTecnico(t);
+            Equipo e = (Equipo) session.load(Equipo.class, 1);
+            e.setNombre("habla");
+            e.setNombre("hable");
+            e.setNombre("hablo");
+            e.setNombre("habli");
+            e.setNombre("habla");
 
-            session.saveOrUpdate(e);
+            // Equipo e = new Equipo();
+            // e.setNombre("lerolero");
+            // e.setTecnico(t);
+
+            // session.saveOrUpdate(e);
             // session.saveOrUpdate(t);
 
             // Criteria criteria = session.createCriteria(Equipo.class);
