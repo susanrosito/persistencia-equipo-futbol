@@ -4,52 +4,58 @@ import java.util.List;
 
 import Interfaces.Nombrable;
 
+public class Equipo implements Nombrable {
 
-public class Equipo implements  Nombrable {
+    private int id;
 
-	
-	Tecnico tecnico;
-	private String nombre;
-	private List<Jugador> jugadores;
-	
-	public Equipo (String nombre, Tecnico tec, List<Jugador> jugadores)
-	{
-		this.nombre=nombre;
-		this.tecnico=tec;
-		this.jugadores=jugadores;
-	}
+    Tecnico tecnico;
 
-	public Formacion armarFormacion() {
-	return this.tecnico.armarFormacion(this);
-	}
+    private String nombre;
 
+    private List<Jugador> jugadores;
 
-	
-	public String getNombre() {
-		
-		return this.nombre;
-	}
+    public Equipo(final String nombre, final Tecnico tec, final List<Jugador> jugadores) {
+        this.nombre = nombre;
+        this.tecnico = tec;
+        this.jugadores = jugadores;
+    }
 
-	public Tecnico getTecnico() {
-		return tecnico;
-	}
+    public Formacion armarFormacion() {
+        return this.tecnico.armarFormacion(this);
+    }
 
-	public void setTecnico(Tecnico tecnico) {
-		this.tecnico = tecnico;
-	}
+    @Override
+    public String getNombre() {
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+        return this.nombre;
+    }
 
-	public void setJugadores(List<Jugador> jugadores) {
-		this.jugadores = jugadores;
-	}
+    public Tecnico getTecnico() {
+        return this.tecnico;
+    }
 
-	public List<Jugador> getJugadores() {
-		return jugadores;
-	}
+    public void setTecnico(final Tecnico tecnico) {
+        this.tecnico = tecnico;
+    }
 
+    public void setNombre(final String nombre) {
+        this.nombre = nombre;
+    }
 
+    public void setJugadores(final List<Jugador> jugadores) {
+        this.jugadores = jugadores;
+    }
+
+    public List<Jugador> getJugadores() {
+        return this.jugadores;
+    }
+
+    public void setId(final int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return this.id;
+    }
 
 }
