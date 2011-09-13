@@ -14,6 +14,10 @@ public class Equipo implements Nombrable {
 
     private List<Jugador> jugadores;
 
+    public Equipo() {
+
+    }
+
     public Equipo(final String nombre, final Tecnico tec, final List<Jugador> jugadores) {
         this.nombre = nombre;
         this.tecnico = tec;
