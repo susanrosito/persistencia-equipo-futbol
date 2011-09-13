@@ -16,6 +16,10 @@ public class Tecnico implements Nombrable {
         this.formacionStrategy = fs;
     }
 
+    public Tecnico() {
+
+    }
+
     @Override
     public String getNombre() {
         return this.nombre;
