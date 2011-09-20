@@ -4,36 +4,52 @@ import Interfaces.Habilidad;
 
 public class HabilidadImp implements Habilidad {
 
-	Posicion posicion;
-	int valor;
+    Posicion posicion;
 
-	public HabilidadImp(Posicion p, int val){
-		this.posicion = p;
-		this.valor = val;
-	}
-	
-	public Posicion getPosicion() {
-		return posicion;
-	}
+    int valor;
 
-	public void setPosicion(Posicion posicion) {
-		this.posicion = posicion;
-	}
+    int id;
 
-	public int getValor() {
-		return valor;
-	}
+    public HabilidadImp() {
+    }
 
-	public void setValor(int valor) {
-		this.valor = valor;
-	}
+    public HabilidadImp(final Posicion p, final int val) {
+        this.posicion = p;
+        this.valor = val;
+    }
 
-	public int getValor(Posicion p) {
+    public Posicion getPosicion() {
+        return this.posicion;
+    }
 
-		if(p == this.getPosicion()){
-			return this.valor;
-		}
-		else{return 0;}
-	}
+    public void setPosicion(final Posicion posicion) {
+        this.posicion = posicion;
+    }
+
+    public int getValor() {
+        return this.valor;
+    }
+
+    public void setValor(final int valor) {
+        this.valor = valor;
+    }
+
+    @Override
+    public int getValor(final Posicion p) {
+
+        if (p == this.getPosicion()) {
+            return this.valor;
+        } else {
+            return 0;
+        }
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(final int id) {
+        this.id = id;
+    }
 
 }
