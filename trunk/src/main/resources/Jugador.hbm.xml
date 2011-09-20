@@ -13,5 +13,9 @@
         </property>
       <many-to-one name="equipo" cascade="all" ></many-to-one>
        
+       <set name="habilidades" table="HabilidadImp" >
+            <key column="H_ID" />
+            <one-to-many class="HabilidadImp"/>
+       </set>
     </class>
 </hibernate-mapping>
