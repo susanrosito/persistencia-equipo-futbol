@@ -16,6 +16,9 @@
 
         <mapping resource="Equipo.hbm.xml"></mapping>
         <mapping resource="Tecnico.hbm.xml"></mapping>
-		
+        <mapping resource="Jugador.hbm.xml"></mapping>
+		<mapping resource="Posicion.hbm.xml"></mapping>
+		<mapping resource="Titular.hbm.xml"></mapping>
+		<mapping resource="HabilidadImp.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>
