@@ -8,9 +8,19 @@ import Interfaces.Nombrable;
 public class Jugador implements Nombrable, Habilidad {
     private String nombre;
 
-    private int id;
-
     private List<HabilidadImp> habilidades;
+
+    private Equipo equipo;
+
+    public Equipo getEquipo() {
+        return this.equipo;
+    }
+
+    public void setEquipo(final Equipo equipo) {
+        this.equipo = equipo;
+    }
+
+    private int id;
 
     public Jugador() {
 
