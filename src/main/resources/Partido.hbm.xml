@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="Clases.Partido" table="Partido" catalog="public">
+        <id name="id" type="java.lang.Integer">
+            <column name="P_ID" />
+            <generator class="native" />
+        </id>
+        <discriminator column="PARTIDO_TYPE" type="string"/>
+		<property name="" column="AMOUNT"/>
+		
+		<subclass name="CreditCardPayment" discriminator-value="CREDIT">
+			<join table="CREDIT_PAYMENT">
+				<key column="PAYMENT_ID"/>
+            	<property name="creditCardType" column="CCTYPE"/>
+        	</join>
+
+    </subclass>
+		
+	<many-to-one name="formacionA" cascade="all" ></many-to-one>
+	<many-to-one name=" " cascade="all" ></many-to-one>
+	<many-to-one name="equipoA" cascade="all" ></many-to-one>
+	<many-to-one name="equipoB" cascade="all" ></many-to-one>
+	<property name="golesEquipoA" type="int">
+	            <column name="PS_GOLESEQUIPOA" not-null="true" unique="false" />
+        </property>
+	<property name="golesEquipoB" type="int">
+	            <column name="PS_GOLESEQUIPOB" not-null="true" unique="false" />
+        </property>
+        
+    </class>
+</hibernate-mapping>
