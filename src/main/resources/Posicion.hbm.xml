@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typedef name="Posicion" class="org.hibernate.type.EnumType">
+        <param name="enumClass">ar.edu.unq.edp.domain.Posicion</param>
+        </typedef>
