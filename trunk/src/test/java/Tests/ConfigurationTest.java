@@ -38,9 +38,6 @@ public class ConfigurationTest extends TestCase {
 
             e.setNombre("habla");
             e.setNombre("hable");
-            e.setNombre("hablo");
-            e.setNombre("habli");
-            e.setNombre("habla");
 
             // Equipo e = new Equipo();
             // e.setNombre("lerolero");
