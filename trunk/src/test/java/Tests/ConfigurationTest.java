@@ -14,16 +14,17 @@ public class ConfigurationTest extends TestCase {
         Configuration cfg = new Configuration();
         cfg.configure();
 
-        SessionFactory sessionFactory = cfg.buildSessionFactory();
-        Session session = sessionFactory.openSession();
+        SessionFactory sessionFactory = cfg.buildSessionFactory(); // Esta es nuestra session
+        Session session = sessionFactory.openSession(); // aca se abre la session.
 
-        org.hibernate.Transaction transaction;
-        transaction = session.beginTransaction();
+        org.hibernate.Transaction transaction; // definimos la transaccion
+        transaction = session.beginTransaction(); // Comienza la transaccion
         session.beginTransaction();
         try {
+            // Ejemplo: ingresar 1001 jugadores en la tabla jugador
             // for (int i = 0; i < 1000; i++) {
             // Jugador j = new Jugador("UnNombre" + i, "UnApellido", i);
-            // session.saveOrUpdate(j);
+            // session.saveOrUpdate(j); // aca manda la orden a guardar
             // }
 
             // session.load(Equipo.class, 1);
@@ -33,6 +34,8 @@ public class ConfigurationTest extends TestCase {
             // t.setNombre("dsdsdsds");
 
             Equipo e = (Equipo) session.load(Equipo.class, 1);
+            // session.createQuery("DELETE FROM Jugador").executeUpdate();
+
             e.setNombre("habla");
             e.setNombre("hable");
             e.setNombre("hablo");

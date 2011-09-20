@@ -11,7 +11,7 @@
         <property name="nombre" type="string">
             <column name="J_NOMBRE" length="20" not-null="true" unique="false" />
         </property>
-      
+      <many-to-one name="equipo" cascade="all" ></many-to-one>
        
     </class>
 </hibernate-mapping>
