@@ -14,7 +14,7 @@
         <many-to-one name="tecnico" cascade="all" ></many-to-one>
     	<set name="jugadores" table="jugador" >
 			 <key column="J_ID" ></key>
-			 <one-to-many class="Jugador"/>
+			 <one-to-many class="Clases.Jugador"/>
     	</set>
     </class>
 </hibernate-mapping>
