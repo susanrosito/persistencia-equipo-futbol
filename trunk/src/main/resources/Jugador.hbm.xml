@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="Clases.JUGADOR" table="Jugadores" catalog="public">
+        <id name="id" type="java.lang.Integer">
+            <column name="J_ID" />
+            <generator class="sequence" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="J_NOMBRE" length="20" not-null="true" unique="false" />
+        </property>
+      
+       
+    </class>
+</hibernate-mapping>
