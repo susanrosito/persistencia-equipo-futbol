@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="Clases.HABILIDADIMP" table="Habilidad" catalog="public">
+    <class name="Clases.HabilidadImp" table="Habilidad" catalog="public">
         <id name="id" type="java.lang.Integer">
             <column name="H_ID" />
             <generator class="sequence" />
@@ -12,7 +12,7 @@
         <property name="posicion" type="Posicion">
             <column name="H_POSICION" length="20" not-null="true" unique="false" />
         </property>
-       <many-to-one name="jugador" cascade="all" ></many-to-one>
+
        
     </class>
 </hibernate-mapping>
