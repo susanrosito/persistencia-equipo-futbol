@@ -12,5 +12,9 @@
             <column name="E_NOMBRE" length="20" not-null="true" unique="false" />
         </property>
         <many-to-one name="tecnico" cascade="all" ></many-to-one>
+    	<set name="jugadores" table="jugador" >
+			 <key column="J_ID" ></key>
+			 <one-to-many class="Jugador"/>
+    	</set>
     </class>
 </hibernate-mapping>
