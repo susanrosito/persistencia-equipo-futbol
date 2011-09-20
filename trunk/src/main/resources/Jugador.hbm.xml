@@ -15,7 +15,7 @@
        
        <set name="habilidades" table="HabilidadImp" >
             <key column="H_ID" />
-            <one-to-many class="HabilidadImp"/>
+            <one-to-many class="Clases.HabilidadImp"/>
        </set>
     </class>
 </hibernate-mapping>
