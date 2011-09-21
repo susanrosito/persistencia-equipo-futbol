@@ -7,6 +7,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.classic.Session;
 
 import Clases.Equipo;
+import Clases.HabilidadImp;
+import Clases.Jugador;
 
 public class ConfigurationTest extends TestCase {
     @SuppressWarnings({ "unused", "deprecation" })
@@ -36,8 +38,17 @@ public class ConfigurationTest extends TestCase {
             Equipo e = (Equipo) session.load(Equipo.class, 1);
             // session.createQuery("DELETE FROM Jugador").executeUpdate();
 
-            e.setNombre("habla");
-            e.setNombre("hable");
+            // e.setNombre("habla");
+            // e.setNombre("hable");
+            Jugador j = new Jugador();
+            HabilidadImp h1 = new HabilidadImp();
+            HabilidadImp h2 = new HabilidadImp();
+            j.getHabilidades().add(h1);
+            j.getHabilidades().add(h2);
+
+            session.saveOrUpdate(h1);
+            session.saveOrUpdate(h2);
+            session.saveOrUpdate(j);
 
             // Equipo e = new Equipo();
             // e.setNombre("lerolero");
