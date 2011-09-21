@@ -9,6 +9,7 @@ import org.hibernate.classic.Session;
 import Clases.Equipo;
 import Clases.HabilidadImp;
 import Clases.Jugador;
+import Clases.Posicion;
 
 public class ConfigurationTest extends TestCase {
     @SuppressWarnings({ "unused", "deprecation" })
@@ -41,13 +42,14 @@ public class ConfigurationTest extends TestCase {
             // e.setNombre("habla");
             // e.setNombre("hable");
             Jugador j = new Jugador();
+            j.setNombre("Jorge");
             HabilidadImp h1 = new HabilidadImp();
+            h1.setPosicion(Posicion.ENGANCHE);
             HabilidadImp h2 = new HabilidadImp();
+            h2.setPosicion(Posicion.ARQUERO);
             j.getHabilidades().add(h1);
             j.getHabilidades().add(h2);
 
-            session.saveOrUpdate(h1);
-            session.saveOrUpdate(h2);
             session.saveOrUpdate(j);
 
             // Equipo e = new Equipo();

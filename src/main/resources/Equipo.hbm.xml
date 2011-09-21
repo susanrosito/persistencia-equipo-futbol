@@ -13,7 +13,7 @@
         </property>
         <many-to-one name="tecnico" cascade="all" ></many-to-one>
     	<set name="jugadores" table="jugador" >
-			 <key column="J_ID" ></key>
+			 <key column="equipo" ></key>
 			 <one-to-many class="Clases.Jugador"/>
     	</set>
     </class>

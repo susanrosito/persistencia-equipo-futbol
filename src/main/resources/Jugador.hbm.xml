@@ -13,9 +13,9 @@
 		</property>
 		<many-to-one name="equipo" cascade="all"></many-to-one>
 
-		<set name="habilidades" table="HabilidadImp">
-			<key column="H_ID" />
+		<bag name="habilidades" table="HabilidadImp" cascade="all,delete-orphan">
+			<key column="jugador_id" />
 			<one-to-many class="Clases.HabilidadImp" />
-		</set>
+		</bag>
 	</class>
 </hibernate-mapping>

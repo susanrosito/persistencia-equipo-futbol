@@ -3,16 +3,20 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="Clases.HabilidadImp" table="Habilidad" catalog="public">
-        <id name="id" type="java.lang.Integer">
-            <column name="H_ID" />
-            <generator class="sequence" />
-        </id>
-       
-        <property name="posicion" type="Posicion">
-            <column name="H_POSICION" length="20" not-null="true" unique="false" />
-        </property>
+	<typedef name="Posicion" class="org.hibernate.type.EnumType">
+		<param name="enumClass">Clases.Posicion</param>
+	</typedef>
 
-       
-    </class>
+	<class name="Clases.HabilidadImp" table="Habilidad" catalog="public">
+		<id name="id" type="java.lang.Integer">
+			<column name="H_ID" />
+			<generator class="sequence" />
+		</id>
+
+		<property name="posicion" type="Posicion">
+			<column name="H_POSICION" not-null="true" unique="false" />
+		</property>
+
+
+	</class>
 </hibernate-mapping>

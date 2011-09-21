@@ -1,5 +1,6 @@
 package Clases;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Interfaces.Habilidad;
@@ -23,7 +24,7 @@ public class Jugador implements Nombrable, Habilidad {
     private int id;
 
     public Jugador() {
-
+        this.habilidades = new ArrayList<HabilidadImp>();
     }
 
     public Jugador(final String nomb, final List<HabilidadImp> habs) {
