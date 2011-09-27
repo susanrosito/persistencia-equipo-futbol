@@ -32,11 +32,11 @@
             <one-to-one name="segundoPartido" cascade="all" ></one-to-one>
             
             <property name="penalesConvertidosEquipoA" type="int">
-	            <column name="PC_PENALESEQUIPOA" not-null="true" unique="false" />
+	            <column name="PC_PENALESEQUIPOA" not-null="false" unique="false" />
         	</property>
         	
         	<property name="penalesConvertidosEquipoB" type="int">
-	            <column name="PC_PENALESEQUIPOB" not-null="true" unique="false" />
+	            <column name="PC_PENALESEQUIPOB" not-null="false" unique="false" />
         	</property>
         	
    		</subclass>

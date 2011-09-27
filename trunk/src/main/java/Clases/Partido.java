@@ -10,6 +10,8 @@ public class Partido {
 
     private int golesEquipoB;
 
+    private int id;
+
     public Partido(final Equipo a, final Equipo b) {
 
         this.equipoA = a;
@@ -66,6 +68,14 @@ public class Partido {
 
     public void setGolesEquipoB(final int golesEquipoB) {
         this.golesEquipoB = golesEquipoB;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(final int id) {
+        this.id = id;
     }
 
 }

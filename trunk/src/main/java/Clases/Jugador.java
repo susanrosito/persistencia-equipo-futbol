@@ -27,7 +27,7 @@ public class Jugador implements Nombrable, Habilidad {
         this.habilidades = new HashSet<HabilidadImp>();
     }
 
-    public Jugador(final String nomb, final Set<HabilidadImp> habs) {
+    public Jugador(final String nomb, final HashSet<HabilidadImp> habs) {
         this.nombre = nomb;
         this.habilidades = habs;
     }
@@ -60,7 +60,7 @@ public class Jugador implements Nombrable, Habilidad {
         }
     }
 
-    public void setHabilidades(final HashSet<HabilidadImp> habilidades) {
+    public void setHabilidades(final Set<HabilidadImp> habilidades) {
         this.habilidades = habilidades;
     }
 

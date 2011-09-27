@@ -21,6 +21,6 @@
         <mapping resource="Tecnico.hbm.xml"></mapping>
 		<mapping resource="Titular.hbm.xml"></mapping>
 		<mapping resource="Partido.hbm.xml"></mapping>
-		<mapping resource="FormacionStrategyImp.hbm.xml"></mapping>
+		<mapping resource="Formacion.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>

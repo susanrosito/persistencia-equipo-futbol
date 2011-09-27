@@ -6,7 +6,6 @@ import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 
 import java.util.HashSet;
-import java.util.Set;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
@@ -23,7 +22,7 @@ public class TestJugador extends TestCase {
 
     HabilidadImp mockHab3;
 
-    Set<HabilidadImp> habilidades;
+    HashSet<HabilidadImp> habilidades;
 
     Jugador jugador;
 
