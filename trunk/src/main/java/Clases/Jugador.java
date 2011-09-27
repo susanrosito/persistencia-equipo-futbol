@@ -1,7 +1,7 @@
 package Clases;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import Interfaces.Habilidad;
 import Interfaces.Nombrable;
@@ -9,7 +9,7 @@ import Interfaces.Nombrable;
 public class Jugador implements Nombrable, Habilidad {
     private String nombre;
 
-    private List<HabilidadImp> habilidades;
+    private Set<HabilidadImp> habilidades;
 
     private Equipo equipo;
 
@@ -24,10 +24,10 @@ public class Jugador implements Nombrable, Habilidad {
     private int id;
 
     public Jugador() {
-        this.habilidades = new ArrayList<HabilidadImp>();
+        this.habilidades = new HashSet<HabilidadImp>();
     }
 
-    public Jugador(final String nomb, final List<HabilidadImp> habs) {
+    public Jugador(final String nomb, final Set<HabilidadImp> habs) {
         this.nombre = nomb;
         this.habilidades = habs;
     }
@@ -60,11 +60,11 @@ public class Jugador implements Nombrable, Habilidad {
         }
     }
 
-    public void setHabilidades(final List<HabilidadImp> habilidades) {
+    public void setHabilidades(final HashSet<HabilidadImp> habilidades) {
         this.habilidades = habilidades;
     }
 
-    public List<HabilidadImp> getHabilidades() {
+    public Set<HabilidadImp> getHabilidades() {
         return this.habilidades;
     }
 
