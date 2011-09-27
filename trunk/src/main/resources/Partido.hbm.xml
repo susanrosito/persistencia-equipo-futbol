@@ -6,29 +6,41 @@
     <class name="Clases.Partido" table="Partido" catalog="public">
         <id name="id" type="java.lang.Integer">
             <column name="P_ID" />
-            <generator class="native" />
+            <generator class="sequence" />
         </id>
-        <discriminator column="PARTIDO_TYPE" type="string"/>
-		<property name="" column="AMOUNT"/>
-		
-		<subclass name="CreditCardPayment" discriminator-value="CREDIT">
-			<join table="CREDIT_PAYMENT">
-				<key column="PAYMENT_ID"/>
-            	<property name="creditCardType" column="CCTYPE"/>
-        	</join>
-
-    </subclass>
-		
-	<many-to-one name="formacionA" cascade="all" ></many-to-one>
-	<many-to-one name=" " cascade="all" ></many-to-one>
-	<many-to-one name="equipoA" cascade="all" ></many-to-one>
-	<many-to-one name="equipoB" cascade="all" ></many-to-one>
-	<property name="golesEquipoA" type="int">
+        <discriminator column="PARTIDO_TIPO" type="string"/>
+        
+		<many-to-one name="equipoA" cascade="all" ></many-to-one>
+		<many-to-one name="equipoB" cascade="all" ></many-to-one>
+		<property name="golesEquipoA" type="int">
 	            <column name="PS_GOLESEQUIPOA" not-null="true" unique="false" />
         </property>
-	<property name="golesEquipoB" type="int">
+	    <property name="golesEquipoB" type="int">
 	            <column name="PS_GOLESEQUIPOB" not-null="true" unique="false" />
         </property>
+        
+        
+		
+		<subclass name="Clases.PartidoSimple" discriminator-value="Simple">
+            <one-to-one name="formacionA" cascade="all" ></one-to-one>
+            <one-to-one name="formacionB" cascade="all" ></one-to-one>
+   		</subclass>
+   		
+   		<subclass name="Clases.PartidoDeCopa" discriminator-value="Copa">
+   		
+            <one-to-one name="primerPartido" cascade="all" ></one-to-one>
+            <one-to-one name="segundoPartido" cascade="all" ></one-to-one>
+            
+            <property name="penalesConvertidosEquipoA" type="int">
+	            <column name="PC_PENALESEQUIPOA" not-null="true" unique="false" />
+        	</property>
+        	
+        	<property name="penalesConvertidosEquipoB" type="int">
+	            <column name="PC_PENALESEQUIPOB" not-null="true" unique="false" />
+        	</property>
+        	
+   		</subclass>
+	
         
     </class>
 </hibernate-mapping>
