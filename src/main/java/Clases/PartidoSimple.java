@@ -2,33 +2,33 @@ package Clases;
 
 public class PartidoSimple extends Partido {
 
-	private Formacion formacionA;
-	private Formacion formacionB;
+    private Formacion formacionA;
 
-	PartidoSimple(Equipo a, Equipo b) {
-		super(a, b);
-		this.formacionA = this.getEquipoA().armarFormacion();
-		this.formacionB = this.getEquipoA().armarFormacion();
-	}
-	
-	
+    private Formacion formacionB;
 
-	public Formacion getFormacionA() {
-		return formacionA;
-	}
+    PartidoSimple(final Equipo a, final Equipo b) {
+        super(a, b);
+        this.formacionA = this.getEquipoA().armarFormacion();
+        this.formacionB = this.getEquipoA().armarFormacion();
+    }
 
-	public void setFormacionA(Formacion formacionA) {
-		this.formacionA = formacionA;
-	}
+    public PartidoSimple() {
+    };
 
-	public Formacion getFormacionB() {
-		return formacionB;
-	}
+    public Formacion getFormacionA() {
+        return this.formacionA;
+    }
 
-	public void setFormacionB(Formacion formacionB) {
-		this.formacionB = formacionB;
-	}
-	
-	
+    public void setFormacionA(final Formacion formacionA) {
+        this.formacionA = formacionA;
+    }
+
+    public Formacion getFormacionB() {
+        return this.formacionB;
+    }
+
+    public void setFormacionB(final Formacion formacionB) {
+        this.formacionB = formacionB;
+    }
 
 }
