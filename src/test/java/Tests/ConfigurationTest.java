@@ -139,7 +139,7 @@ public class ConfigurationTest extends TestCase {
             j1a.setHabilidad(a1a, 1);
 
             Jugador j2a = new Jugador();
-            j2.setNombre("Manuel II");
+            j2a.setNombre("Manuel II");
             HabilidadImp a2a = new HabilidadImp();
             a2a.setPosicion(Posicion.DELANTERO);
             a2a.setValor(10);
@@ -160,7 +160,7 @@ public class ConfigurationTest extends TestCase {
             j4a.setHabilidad(a4a, 1);
 
             Jugador j5a = new Jugador();
-            j5.setNombre("Kitty II");
+            j5a.setNombre("Kitty II");
             HabilidadImp a5a = new HabilidadImp();
             a5a.setPosicion(Posicion.MEDIA_PUNTA);
             a5a.setValor(10);
@@ -188,7 +188,7 @@ public class ConfigurationTest extends TestCase {
             j8a.setHabilidad(a8a, 1);
 
             Jugador j9a = new Jugador();
-            j9.setNombre("Josele II");
+            j9a.setNombre("Josele II");
             HabilidadImp a9a = new HabilidadImp();
             a9a.setPosicion(Posicion.CENTRAL);
             a9a.setValor(7);
@@ -246,13 +246,11 @@ public class ConfigurationTest extends TestCase {
             tb.setFormacionStrategy(new FormacionStrategyImp(posiciones));
 
             Equipo eqa = new Equipo();
-            eqa.setId(4);
             eqa.setJugadores(juga);
             eqa.setNombre("Equipo A");
             eqa.setTecnico(ta);
 
             Equipo eqb = new Equipo();
-            eqb.setId(4);
             eqb.setJugadores(juga2);
             eqb.setNombre("Equipo B");
             eqb.setTecnico(tb);
@@ -260,6 +258,11 @@ public class ConfigurationTest extends TestCase {
             PartidoSimple p = new PartidoSimple();
             p.setEquipoA(eqa);
             p.setEquipoB(eqb);
+
+            // PartidoDeCopa pc = new PartidoDeCopa();
+            // pc.setEquipoA(eqa);
+            // pc.setEquipoB(eqb);
+            // pc.s
 
             // HabilidadImp h1 = new HabilidadImp();
             // h1.setPosicion(Posicion.ENGANCHE);

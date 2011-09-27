@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="Clases.Formacion" table="Formaciones" catalog="public">
+		<id name="id" type="java.lang.Integer">
+			<column name="F_ID" />
+			<generator class="sequence" />
+		</id>
+		
+		<one-to-one name="equipo" cascade="all"></one-to-one>
+
+		<bag name="titulares" table="Titulares" cascade="all,delete-orphan">
+			<key column="titular_id" />
+			<one-to-many class="Clases.Titular" />
+		</bag>
+		
+		<bag name="suplentes" table="Suplentes" cascade="all,delete-orphan">
+			<key column="jugador_id" />
+			<one-to-many class="Clases.Jugador" />
+		</bag>
+	</class>
+</hibernate-mapping>

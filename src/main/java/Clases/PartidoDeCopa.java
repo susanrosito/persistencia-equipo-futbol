@@ -10,10 +10,15 @@ public class PartidoDeCopa extends Partido {
 
     private int penalesConvertidosEquipoB;
 
+    private int id;
+
     public PartidoDeCopa(final Equipo a, final Equipo b) {
         super(a, b);
         this.primerPartido = new PartidoSimple(a, b);
         this.segundoPartido = new PartidoSimple(a, b);
+    }
+
+    public PartidoDeCopa() {
     }
 
     @Override
@@ -81,6 +86,16 @@ public class PartidoDeCopa extends Partido {
 
     public void setSegundoPartido(final PartidoSimple segundoPartido) {
         this.segundoPartido = segundoPartido;
+    }
+
+    @Override
+    public int getId() {
+        return this.id;
+    }
+
+    @Override
+    public void setId(final int id) {
+        this.id = id;
     }
 
 }
