@@ -1,72 +1,71 @@
 package Clases;
 
 public class Partido {
-	
-	private Equipo equipoA;
-	private Equipo equipoB;
-	
-	private int golesEquipoA;
-	private int golesEquipoB;
-	
-	
-	public Partido(Equipo a, Equipo b){
-		
-		this.equipoA  = a;
-		this.equipoB = b;
-		this.golesEquipoA = 0;
-		this.golesEquipoB = 0;
-		
-	}
-	
-	
-	public Equipo getGanador(){
-		
-		if(this.golesEquipoA > this.golesEquipoB)
-		{
-			return this.equipoA;
-		}
-		else { if(this.golesEquipoA < this.golesEquipoB)
-				  { 
-			        return this.equipoB;
-				  }
-		else { return null;}}
-		
-	}
-	
-	
-	
-	public Equipo getEquipoA() {
-		return equipoA;
-	}
-	
-	public void setEquipoA(Equipo equipoA) {
-		this.equipoA = equipoA;
-	}
-	
-	public Equipo getEquipoB() {
-		return equipoB;
-	}
-	
-	public void setEquipoB(Equipo equipoB) {
-		this.equipoB = equipoB;
-	}
-	
-	public int getGolesEquipoA() {
-		return golesEquipoA;
-	}
-	
-	public void setGolesEquipoA(int golesEquipoA) {
-		this.golesEquipoA = golesEquipoA;
-	}
-	
-	public int getGolesEquipoB() {
-		return golesEquipoB;
-	}
-	
-	public void setGolesEquipoB(int golesEquipoB) {
-		this.golesEquipoB = golesEquipoB;
-	}
-	
-	
+
+    private Equipo equipoA;
+
+    private Equipo equipoB;
+
+    private int golesEquipoA;
+
+    private int golesEquipoB;
+
+    public Partido(final Equipo a, final Equipo b) {
+
+        this.equipoA = a;
+        this.equipoB = b;
+        this.golesEquipoA = 0;
+        this.golesEquipoB = 0;
+
+    }
+
+    public Partido() {
+    }
+
+    public Equipo getGanador() {
+
+        if (this.golesEquipoA > this.golesEquipoB) {
+            return this.equipoA;
+        } else {
+            if (this.golesEquipoA < this.golesEquipoB) {
+                return this.equipoB;
+            } else {
+                return null;
+            }
+        }
+
+    }
+
+    public Equipo getEquipoA() {
+        return this.equipoA;
+    }
+
+    public void setEquipoA(final Equipo equipoA) {
+        this.equipoA = equipoA;
+    }
+
+    public Equipo getEquipoB() {
+        return this.equipoB;
+    }
+
+    public void setEquipoB(final Equipo equipoB) {
+        this.equipoB = equipoB;
+    }
+
+    public int getGolesEquipoA() {
+        return this.golesEquipoA;
+    }
+
+    public void setGolesEquipoA(final int golesEquipoA) {
+        this.golesEquipoA = golesEquipoA;
+    }
+
+    public int getGolesEquipoB() {
+        return this.golesEquipoB;
+    }
+
+    public void setGolesEquipoB(final int golesEquipoB) {
+        this.golesEquipoB = golesEquipoB;
+    }
 
 }
