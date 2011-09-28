@@ -16,9 +16,9 @@
 			<one-to-many class="Clases.Titular" />
 		</bag>
 		
-		<bag name="suplentes" table="Suplentes" cascade="all,delete-orphan">
-			<key column="jugador_id" />
-			<one-to-many class="Clases.Jugador" />
+		<bag name="suplentes" table="Suplentes" cascade="all">
+			<key column="formacion_id" />
+			<many-to-many class="Clases.Jugador"></many-to-many>
 		</bag>
 	</class>
 </hibernate-mapping>

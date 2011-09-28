@@ -5,12 +5,12 @@
 <hibernate-mapping>
     <class name="Clases.Titular" table="Titulares" catalog="public">
         <id name="id" type="java.lang.Integer">
-            <column name="H_ID" />
+            <column name="t_ID" />
             <generator class="sequence" />
         </id>
        
         <property name="posicion" type="Posicion">
-            <column name="H_POSICION" length="20" not-null="true" unique="false" />
+            <column name="t_POSICION" length="20" not-null="true" unique="false" />
         </property>
       <one-to-one name="jugador" cascade="all" ></one-to-one>
        
