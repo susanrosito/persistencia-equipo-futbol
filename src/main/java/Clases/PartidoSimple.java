@@ -6,7 +6,7 @@ public class PartidoSimple extends Partido {
 
     private Formacion formacionB;
 
-    PartidoSimple(final Equipo a, final Equipo b) {
+    public PartidoSimple(final Equipo a, final Equipo b) {
         super(a, b);
         this.formacionA = this.getEquipoA().armarFormacion();
         this.formacionB = this.getEquipoA().armarFormacion();

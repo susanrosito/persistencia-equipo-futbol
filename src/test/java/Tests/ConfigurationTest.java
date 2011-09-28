@@ -255,9 +255,7 @@ public class ConfigurationTest extends TestCase {
             eqb.setNombre("Equipo B");
             eqb.setTecnico(tb);
 
-            PartidoSimple p = new PartidoSimple();
-            p.setEquipoA(eqa);
-            p.setEquipoB(eqb);
+            PartidoSimple p = new PartidoSimple(eqa, eqb);
 
             // PartidoDeCopa pc = new PartidoDeCopa();
             // pc.setEquipoA(eqa);
