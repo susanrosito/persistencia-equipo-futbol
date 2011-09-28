@@ -12,6 +12,7 @@ import Clases.Equipo;
 import Clases.FormacionStrategyImp;
 import Clases.HabilidadImp;
 import Clases.Jugador;
+import Clases.PartidoDeCopa;
 import Clases.PartidoSimple;
 import Clases.Posicion;
 import Clases.Tecnico;
@@ -257,6 +258,8 @@ public class ConfigurationTest extends TestCase {
 
             PartidoSimple p = new PartidoSimple(eqa, eqb);
 
+            PartidoDeCopa pc = new PartidoDeCopa(eqa, eqb);
+
             // PartidoDeCopa pc = new PartidoDeCopa();
             // pc.setEquipoA(eqa);
             // pc.setEquipoB(eqb);
@@ -269,7 +272,7 @@ public class ConfigurationTest extends TestCase {
             // j.getHabilidades().add(h1);
             // j.getHabilidades().add(h2);
 
-            session.saveOrUpdate(p);
+            session.saveOrUpdate(pc);
 
             // Equipo e = new Equipo();
             // e.setNombre("lerolero");
