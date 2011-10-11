@@ -55,9 +55,10 @@ public class Jugador implements Nombrable, Habilidad {
         for (HabilidadImp habAc : this.getHabilidades()) {
             if (habAc.getPosicion() == hab.getPosicion()) {
                 habAc.setValor(hab.getValor());
-                break;
+                return;
             }
         }
+        this.habilidades.add(hab);
     }
 
     public void setHabilidades(final Set<HabilidadImp> habilidades) {

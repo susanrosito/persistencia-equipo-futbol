@@ -22,14 +22,14 @@
         
 		
 		<subclass name="Clases.PartidoSimple" discriminator-value="Simple">
-            <one-to-one name="formacionA" cascade="all" ></one-to-one>
-            <one-to-one name="formacionB" cascade="all" ></one-to-one>
+            <many-to-one name="formacionA" cascade="all" ></many-to-one>
+            <many-to-one name="formacionB" cascade="all" ></many-to-one>
    		</subclass>
    		
    		<subclass name="Clases.PartidoDeCopa" discriminator-value="Copa">
    		
-            <one-to-one name="primerPartido" cascade="all" ></one-to-one>
-            <one-to-one name="segundoPartido" cascade="all" ></one-to-one>
+            <many-to-one name="primerPartido" cascade="all" ></many-to-one>
+            <many-to-one name="segundoPartido" cascade="all" ></many-to-one>
             
             <property name="penalesConvertidosEquipoA" type="int">
 	            <column name="PC_PENALESEQUIPOA" not-null="false" unique="false" />
