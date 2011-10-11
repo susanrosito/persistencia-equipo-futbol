@@ -1,6 +1,7 @@
 package Tests;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import junit.framework.TestCase;
 
@@ -19,6 +20,16 @@ import Clases.Tecnico;
 
 public class ConfigurationTest extends TestCase {
     @SuppressWarnings({ "unused", "deprecation" })
+    public PartidoSimple crearPartidosSimple(final Equipo eqa, final Equipo eqb) {
+        PartidoSimple p = new PartidoSimple(eqa, eqb);
+        int cgA = new Random().nextInt(6);
+        int cgB = new Random().nextInt(6);
+        p.setGolesEquipoA(cgA);
+        p.setGolesEquipoB(cgB);
+        return p;
+
+    }
+
     public void testApp() throws Exception {
         Configuration cfg = new Configuration();
         cfg.configure();
@@ -246,19 +257,34 @@ public class ConfigurationTest extends TestCase {
             tb.setNombre("Crustacio");
             tb.setFormacionStrategy(new FormacionStrategyImp(posiciones));
 
-            Equipo eqa = new Equipo();
-            eqa.setJugadores(juga);
-            eqa.setNombre("Equipo A");
-            eqa.setTecnico(ta);
+            Equipo eq1 = new Equipo();
+            eq1.setJugadores(juga);
+            eq1.setNombre("Equipo A");
+            eq1.setTecnico(ta);
 
-            Equipo eqb = new Equipo();
-            eqb.setJugadores(juga2);
-            eqb.setNombre("Equipo B");
-            eqb.setTecnico(tb);
+            Equipo eq3 = new Equipo();
+            eq3.setJugadores(juga);
+            eq3.setNombre("Equipo C");
+            eq3.setTecnico(ta);
 
-            PartidoSimple p = new PartidoSimple(eqa, eqb);
+            Equipo eq2 = new Equipo();
+            eq2.setJugadores(juga2);
+            eq2.setNombre("Equipo B");
+            eq2.setTecnico(tb);
 
-            PartidoDeCopa pc = new PartidoDeCopa(eqa, eqb);
+            Equipo eq4 = new Equipo();
+            eq4.setJugadores(juga);
+            eq4.setNombre("Equipo D");
+            eq4.setTecnico(tb);
+
+            Equipo eq5 = new Equipo();
+            eq5.setJugadores(juga2);
+            eq5.setNombre("Equipo E");
+            eq5.setTecnico(tb);
+
+            PartidoSimple p = new PartidoSimple(eq1, eq2);
+
+            PartidoDeCopa pc = new PartidoDeCopa(eq3, eq1);
 
             // PartidoDeCopa pc = new PartidoDeCopa();
             // pc.setEquipoA(eqa);

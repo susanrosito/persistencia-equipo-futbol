@@ -51,7 +51,6 @@ public class Jugador implements Nombrable, Habilidad {
     }
 
     public void setHabilidad(final HabilidadImp hab, final int val) {
-        // falta crear habilidad en caso de no encontrarla
         for (HabilidadImp habAc : this.getHabilidades()) {
             if (habAc.getPosicion() == hab.getPosicion()) {
                 habAc.setValor(hab.getValor());
