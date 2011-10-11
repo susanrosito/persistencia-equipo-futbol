@@ -31,6 +31,7 @@ public class ConfigurationTest extends TestCase {
     }
 
     public void testApp() throws Exception {
+        
         Configuration cfg = new Configuration();
         cfg.configure();
 
