@@ -21,7 +21,7 @@ public class ConfigurationTest extends TestCase {
      */
     public void testApp() throws Exception {
 
-        // IN PROGREES xD
+        // IN PROGREES xD o.O
 
         // HibernateManager.instance().runInSession((new Pa)
 
