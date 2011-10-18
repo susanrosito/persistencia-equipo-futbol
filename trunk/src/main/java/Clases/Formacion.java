@@ -12,6 +12,9 @@ public class Formacion {
 
     private int id;
 
+    public Formacion() {
+    }
+
     public Formacion(final List<Titular> ts, final List<Jugador> ss, final Equipo e) {
         this.Titulares = ts;
         this.Suplentes = ss;
