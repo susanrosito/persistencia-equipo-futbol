@@ -12,12 +12,15 @@
         
 		<many-to-one name="equipoA" cascade="all" ></many-to-one>
 		<many-to-one name="equipoB" cascade="all" ></many-to-one>
+		
+		
 		<property name="golesEquipoA" type="int">
 	            <column name="PS_GOLESEQUIPOA" not-null="true" unique="false" />
         </property>
 	    <property name="golesEquipoB" type="int">
 	            <column name="PS_GOLESEQUIPOB" not-null="true" unique="false" />
         </property>
+        
         
         
 		
@@ -30,6 +33,7 @@
    		
             <many-to-one name="primerPartido" cascade="all" ></many-to-one>
             <many-to-one name="segundoPartido" cascade="all" ></many-to-one>
+            <one-to-one name = "ganadorP" cascade = "all"></one-to-one>
             
             <property name="penalesConvertidosEquipoA" type="int">
 	            <column name="PC_PENALESEQUIPOA" not-null="false" unique="false" />

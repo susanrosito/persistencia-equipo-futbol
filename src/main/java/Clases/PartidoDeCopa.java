@@ -10,12 +10,15 @@ public class PartidoDeCopa extends Partido {
 
     private int penalesConvertidosEquipoB;
 
+    private Equipo ganadorP;
+
     private int id;
 
     public PartidoDeCopa(final Equipo a, final Equipo b) {
         super(a, b);
         this.primerPartido = new PartidoSimple(a, b);
         this.segundoPartido = new PartidoSimple(a, b);
+        this.setGanadorP(this.getGanador());
     }
 
     public PartidoDeCopa() {
@@ -40,17 +43,20 @@ public class PartidoDeCopa extends Partido {
         Equipo ganadorDos = this.segundoPartido.getGanador();
         Equipo ganadorGlobal = null;
 
-        if (ganadorUno.equals(ganadorDos)) {
-            ganadorGlobal = ganadorUno;
-        }
         if (ganadorUno == null & !(ganadorDos == null)) {
             ganadorGlobal = ganadorDos;
-        }
-        if (!(ganadorUno == null) & ganadorDos == null) {
-            ganadorGlobal = ganadorUno;
-        }
-        if (ganadorUno.equals(ganadorDos)) {
-            ganadorGlobal = ganadorUno;
+        } else {
+            if (!(ganadorUno == null) & ganadorDos == null) {
+                ganadorGlobal = ganadorUno;
+            } else {
+                if (ganadorUno.equals(ganadorDos)) {
+                    ganadorGlobal = ganadorUno;
+                } else {
+                    if (ganadorUno.equals(ganadorDos)) {
+                        ganadorGlobal = ganadorUno;
+                    }
+                }
+            }
         }
 
         return ganadorGlobal;
@@ -96,6 +102,14 @@ public class PartidoDeCopa extends Partido {
     @Override
     public void setId(final int id) {
         this.id = id;
+    }
+
+    public void setGanadorP(final Equipo ganadorP) {
+        this.ganadorP = ganadorP;
+    }
+
+    public Equipo getGanadorP() {
+        return this.ganadorP;
     }
 
 }
