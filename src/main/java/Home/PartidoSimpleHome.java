@@ -1,8 +1,13 @@
 package Home;
 
+import static org.hibernate.criterion.Restrictions.eq;
+import static org.hibernate.criterion.Restrictions.geProperty;
+
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.classic.Session;
 
+import Clases.PartidoSimple;
 import Commands.HibernateManager;
 
 /**
@@ -12,11 +17,21 @@ public class PartidoSimpleHome {
 
     public int getCantPartidosSimplesLocalesGanadosPor(final String nombre, final String nombre2) {
         Session session = HibernateManager.instance().getSession();
-        Query query = session
-                .createQuery("from PartidoSimple as ps where ps.equipoA.nombre = ? and ps.equipoB.nombre = ? and ps.golesEquipoA > ps.golesEquipoB ");
-        query.setString(0, nombre);
-        query.setString(1, nombre2);
-        return query.list().size();
+        Criteria criteria = session.createCriteria(PartidoSimple.class);
+
+        Criteria criteriaEquipoA = criteria.createCriteria("equipoA");
+        criteriaEquipoA.add(eq("nombre", nombre));
+
+        Criteria criteriaEquipoB = criteria.createCriteria("equipoB");
+        criteriaEquipoB.add(eq("nombre", nombre));
+
+        criteria.add(geProperty("golesEquipoA", "golesEquipoB"));
+        return criteria.list().size();
+        /*
+         * Query query = session .createQuery(
+         * "from PartidoSimple as ps where ps.equipoA.nombre = ? and ps.equipoB.nombre = ? and ps.golesEquipoA > ps.golesEquipoB "
+         * ); query.setString(0, nombre); query.setString(1, nombre2); return query.list().size();
+         */
     }
 
     public int getCantPartidosSimplesVisitantesGanadosPor(final String nombre, final String nombre2) {
