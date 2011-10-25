@@ -1,7 +1,8 @@
 package Home;
 
-import org.hibernate.Query;
+import org.hibernate.Criteria;
 import org.hibernate.classic.Session;
+import org.hibernate.criterion.Expression;
 
 import Clases.Tecnico;
 import Commands.HibernateManager;
@@ -12,9 +13,10 @@ import Commands.HibernateManager;
 public class TecnicoHome {
     public Tecnico getByName(final String nombre) {
         Session session = HibernateManager.instance().getSession();
-        Query query = session.createQuery("from Tecnico where nombre = ?");
-        query.setString(0, nombre);
-        return (Tecnico) query.uniqueResult();
+        Criteria criteria = session.createCriteria(Tecnico.class);
+        criteria.add(Expression.eq("nombre", nombre));
+        return (Tecnico) criteria.uniqueResult();
+
     }
 
 }
