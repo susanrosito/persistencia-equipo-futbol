@@ -8,7 +8,7 @@
 		<param name="enumClass">dominio.Posicion</param>
 	</typedef>
 
-	<class name="Habilidad" table="Habilidades">
+	<class name="interfaces.Habilidad" table="Habilidades">
 		<id name="id" type="java.lang.Integer">
 			<column name="Habilidad_ID" />
 			<generator class="sequence" />
