@@ -12,6 +12,8 @@ public class EquiposConMasPartidosGanadosCommand implements Runnable {
     public void run() {
         PartidoDeCopaHome pc = new PartidoDeCopaHome();
         ArrayList<Equipo> equipos = pc.getPartidosDeCopaGanadosPorEquipo();
-        System.out.println(equipos);
+        for (int i = 0; i < equipos.size(); i++) {
+            System.out.println(equipos.get(i).getNombre());
+        }
     }
 }
