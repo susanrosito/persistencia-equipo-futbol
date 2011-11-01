@@ -15,7 +15,7 @@
 
 		<set name="habilidades"  cascade="all,delete-orphan">
 			<key column="jugador_id" />
-			<one-to-many class="dominio.Habilidad" />
+			<one-to-many class="interfases.Habilidad" />
 		</set>
 	</class>
 </hibernate-mapping>
