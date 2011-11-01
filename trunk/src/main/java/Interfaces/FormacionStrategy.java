@@ -1,7 +1,7 @@
 package Interfaces;
 
-import Clases.Formacion;
-import Clases.Equipo;
+import dominio.Equipo;
+import dominio.Formacion;
 
 public interface FormacionStrategy {
 
