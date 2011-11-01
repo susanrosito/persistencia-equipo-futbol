@@ -18,7 +18,7 @@ public class PartidoDeCopa extends Partido {
         super(a, b);
         this.primerPartido = new PartidoSimple(a, b);
         this.segundoPartido = new PartidoSimple(a, b);
-        this.setGanadorP(this.getGanador());
+        // this.setGanadorP(this.getGanador());
     }
 
     public PartidoDeCopa() {
@@ -30,6 +30,7 @@ public class PartidoDeCopa extends Partido {
         if (ganador == null) {
             ganador = this.definicionPorPenales();
         }
+        this.ganadorP = ganador;
         return ganador;
     }
 
@@ -58,7 +59,7 @@ public class PartidoDeCopa extends Partido {
                 }
             }
         }
-        this.ganadorP = ganadorGlobal;
+
         return ganadorGlobal;
     }
 
