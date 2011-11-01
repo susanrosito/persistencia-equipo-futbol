@@ -1,7 +1,7 @@
 package dominio;
 
-import Interfaces.FormacionStrategy;
-import Interfaces.Nombrable;
+import interfaces.FormacionStrategy;
+import interfaces.Nombrable;
 
 public class Tecnico implements Nombrable {
 

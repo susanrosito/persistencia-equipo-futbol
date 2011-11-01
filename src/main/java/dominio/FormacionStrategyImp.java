@@ -1,9 +1,10 @@
 package dominio;
 
+import interfaces.FormacionStrategy;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import Interfaces.FormacionStrategy;
 
 public class FormacionStrategyImp implements FormacionStrategy {
     private List<Posicion> posiciones;
