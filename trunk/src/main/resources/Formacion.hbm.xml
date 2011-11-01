@@ -13,7 +13,7 @@
 
 		<bag name="titulares" table="Titulares" cascade="all,delete-orphan">
 			<key column="formacion_id" />
-			<one-to-many class="Clases.Titular" />
+			<one-to-many class="dominio.Titular" />
 		</bag>
 		
 		<bag name="suplentes" table="Suplentes" cascade="all">
