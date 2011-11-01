@@ -58,7 +58,7 @@ public class PartidoDeCopa extends Partido {
                 }
             }
         }
-
+        this.ganadorP = ganadorGlobal;
         return ganadorGlobal;
     }
 
