@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
  
 <hibernate-mapping>
-    <class name="Clases.Equipo" table="Equipos" catalog="public">
+    <class name="dominio.Equipo" table="Equipos" catalog="public">
         <id name="id" type="java.lang.Integer">
             <column name="E_ID" />
             <generator class="sequence" />
@@ -14,7 +14,7 @@
         <many-to-one name="tecnico" cascade="all" ></many-to-one>
     	<bag name="jugadores" table="jugador"  cascade="all">
 			 <key column="equipo" ></key>
-			 <one-to-many class="Clases.Jugador"/>
+			 <one-to-many class="dominio.Jugador"/>
     	</bag>
     </class>
 </hibernate-mapping>

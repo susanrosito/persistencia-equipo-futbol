@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="Clases.Titular" table="Titulares" catalog="public">
+    <class name="dominio.Titular" table="Titulares" catalog="public">
         <id name="id" type="java.lang.Integer">
             <column name="t_ID" />
             <generator class="sequence" />

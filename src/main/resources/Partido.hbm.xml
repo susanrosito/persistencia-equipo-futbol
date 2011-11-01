@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
  
 <hibernate-mapping>
-    <class name="Clases.Partido" table="Partido" catalog="public">
+    <class name="dominio.Partido" table="Partido" catalog="public">
         <id name="id" type="java.lang.Integer">
             <column name="P_ID" />
             <generator class="sequence" />
@@ -24,12 +24,12 @@
         
         
 		
-		<subclass name="Clases.PartidoSimple" discriminator-value="Simple">
+		<subclass name="dominio.PartidoSimple" discriminator-value="Simple">
             <many-to-one name="formacionA" cascade="all" ></many-to-one>
             <many-to-one name="formacionB" cascade="all" ></many-to-one>
    		</subclass>
    		
-   		<subclass name="Clases.PartidoDeCopa" discriminator-value="Copa">
+   		<subclass name="dominio.PartidoDeCopa" discriminator-value="Copa">
    		
             <many-to-one name="primerPartido" cascade="all" ></many-to-one>
             <many-to-one name="segundoPartido" cascade="all" ></many-to-one>
