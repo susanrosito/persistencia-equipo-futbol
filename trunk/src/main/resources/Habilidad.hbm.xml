@@ -5,7 +5,7 @@
 <hibernate-mapping>
 
 	<typedef name="Posicion" class="org.hibernate.type.EnumType">
-		<param name="enumClass">Clases.Posicion</param>
+		<param name="enumClass">dominio.Posicion</param>
 	</typedef>
 
 	<class name="Habilidad" table="Habilidades">
