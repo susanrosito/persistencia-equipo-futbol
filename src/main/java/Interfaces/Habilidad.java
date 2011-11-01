@@ -1,6 +1,6 @@
 package Interfaces;
 
-import Clases.Posicion;
+import dominio.Posicion;
 
 public interface Habilidad {
 
