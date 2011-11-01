@@ -12,7 +12,7 @@ public class TestHabilidadImp extends TestCase {
 	Habilidad habilidad;
 	
 	protected void setUp(){
-		this.posicion= posicion.ARQUERO;
+		this.posicion= Posicion.ARQUERO;
 		this.valor = 6;
 		this.habilidad = new HabilidadImp(this.posicion, this.valor);
 	}
