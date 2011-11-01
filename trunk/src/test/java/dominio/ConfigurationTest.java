@@ -1,5 +1,7 @@
 package dominio;
 
+import interfaces.FormacionStrategy;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -269,11 +271,15 @@ public class ConfigurationTest extends TestCase {
 
             Tecnico ta = new Tecnico();
             ta.setNombre("Anastacio");
-            ta.setFormacionStrategy(new FormacionStrategyImp(posiciones));
+            FormacionStrategy fe1 = new FormacionStrategyImp(posiciones);
+            System.out.println("FormaciónStrategy : " + fe1 + "SASASASASASASASASASASASA");
+            session.saveOrUpdate(fe1);
+            ta.setFormacionStrategy(fe1);
 
             Tecnico tb = new Tecnico();
             tb.setNombre("Crustacio");
-            tb.setFormacionStrategy(new FormacionStrategyImp(posiciones));
+            FormacionStrategy fe = new FormacionStrategyImp(posiciones);
+            tb.setFormacionStrategy(fe);
 
             Equipo eq1 = new Equipo();
             eq1.setJugadores(juga);
@@ -300,7 +306,7 @@ public class ConfigurationTest extends TestCase {
             eq5.setNombre("Equipo E");
             eq5.setTecnico(tb);
             
-            session.saveOrUpdate(eq4);
+            session.saveOrUpdate(eq3);
             
             /*
             for (int i = 0; i < 1000; i++) {
