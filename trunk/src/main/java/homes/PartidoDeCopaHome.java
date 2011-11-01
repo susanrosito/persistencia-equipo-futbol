@@ -1,13 +1,17 @@
 package homes;
 
+import java.util.ArrayList;
+
 import org.hibernate.Query;
 import org.hibernate.classic.Session;
 
 import commands.HibernateManager;
 
+import dominio.Equipo;
+
 public class PartidoDeCopaHome {
 
-    public int getCantPartidosDeCopaGanadosPor(final String nombre) {
+    public ArrayList<Equipo> getPartidosDeCopaGanadosPorEquipo() {
         Session session = HibernateManager.instance().getSession();
         /*
          * Criteria criteria = session.createCriteria(PartidoDeCopa.class); Criteria criteria1 =
@@ -17,9 +21,9 @@ public class PartidoDeCopaHome {
          */
 
         Query query = session
-                .createQuery("select pc.ganadorP, count(*) as ganados from PartidoDeCopa as pc group by pc.ganadprP order by ganados asc");
+                .createQuery("select ganador from (select pc.ganadorP as ganador, count(*) as ganados from PartidoDeCopa as pc group by ganador order by ganados asc)");
 
-        return query.list().size();
+        return (ArrayList<Equipo>) query.list();
 
         /*
          * criteria.add(geProperty("golesEquipoA", "golesEquipoB")); return criteria.list().size();
