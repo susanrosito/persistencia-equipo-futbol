@@ -4,9 +4,9 @@ import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
+import interfaces.FormacionStrategy;
 import dominio.Equipo;
 import dominio.Tecnico;
-import Interfaces.FormacionStrategy;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 

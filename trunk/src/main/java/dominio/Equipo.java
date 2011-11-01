@@ -1,8 +1,9 @@
 package dominio;
 
+import interfaces.Nombrable;
+
 import java.util.List;
 
-import Interfaces.Nombrable;
 
 public class Equipo implements Nombrable {
 

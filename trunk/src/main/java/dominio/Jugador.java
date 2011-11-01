@@ -1,10 +1,11 @@
 package dominio;
 
+import interfaces.Habilidad;
+import interfaces.Nombrable;
+
 import java.util.HashSet;
 import java.util.Set;
 
-import Interfaces.Habilidad;
-import Interfaces.Nombrable;
 
 public class Jugador implements Nombrable, Habilidad {
     private String nombre;

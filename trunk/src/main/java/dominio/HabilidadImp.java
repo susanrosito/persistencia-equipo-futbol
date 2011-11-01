@@ -1,6 +1,6 @@
 package dominio;
 
-import Interfaces.Habilidad;
+import interfaces.Habilidad;
 
 public class HabilidadImp implements Habilidad {
 

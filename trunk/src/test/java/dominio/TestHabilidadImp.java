@@ -1,8 +1,8 @@
 package dominio;
 
+import interfaces.Habilidad;
 import dominio.HabilidadImp;
 import dominio.Posicion;
-import Interfaces.Habilidad;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
