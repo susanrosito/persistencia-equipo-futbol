@@ -12,9 +12,12 @@ import dominio.Equipo;
 /**
  * TODO: description
  */
+
 public class EquipoHome {
-    public Equipo getByName(final String nombre) {
-        Session session = HibernateManager.instance().getSession();
+    
+	
+	public Equipo getByName(final String nombre) {
+		   Session session = HibernateManager.instance().getSession();
         Criteria criteria = session.createCriteria(Equipo.class);
         criteria.add(Expression.eq("nombre", nombre));
         return (Equipo) criteria.uniqueResult();

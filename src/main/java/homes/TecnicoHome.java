@@ -15,6 +15,7 @@ import dominio.Tecnico;
 public class TecnicoHome {
     public Tecnico getByName(final String nombre) {
         Session session = HibernateManager.instance().getSession();
+       
         Criteria criteria = session.createCriteria(Tecnico.class);
         criteria.add(Expression.eq("nombre", nombre));
         return (Tecnico) criteria.uniqueResult();
