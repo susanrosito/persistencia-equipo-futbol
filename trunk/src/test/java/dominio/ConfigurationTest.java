@@ -1,7 +1,6 @@
 package dominio;
 
 import interfaces.FormacionStrategy;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -10,15 +9,6 @@ import junit.framework.TestCase;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
-import dominio.Equipo;
-import dominio.FormacionStrategyImp;
-import dominio.HabilidadImp;
-import dominio.Jugador;
-import dominio.PartidoDeCopa;
-import dominio.PartidoSimple;
-import dominio.Posicion;
-import dominio.Tecnico;
 
 
 public class ConfigurationTest extends TestCase {
