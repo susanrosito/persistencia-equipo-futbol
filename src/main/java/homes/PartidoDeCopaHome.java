@@ -23,7 +23,7 @@ public class PartidoDeCopaHome {
          */
 
         Query query = session
-                .createQuery("select pc.ganadorP as ganador, count(*) as ganados from PartidoDeCopa as pc group by ganador order by ganados asc");
+                .createQuery("select pc.ganadorP, count(*) as ganados from PartidoDeCopa as pc group by pc.ganadorP order by ganados asc");
 
         List<Equipo> equipos = new ArrayList<Equipo>();
 
