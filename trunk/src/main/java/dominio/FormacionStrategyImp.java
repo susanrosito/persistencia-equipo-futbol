@@ -9,7 +9,7 @@ import java.util.List;
 public class FormacionStrategyImp implements FormacionStrategy {
     private List<Posicion> posiciones;
 
-    public FormacionStrategyImp(final ArrayList<Posicion> posiciones) {
+    public FormacionStrategyImp(final List<Posicion> posiciones) {
 
         this.posiciones = posiciones;
 
