@@ -19,6 +19,7 @@ public class PartidoSimpleHome {
 
     public int getCantPartidosSimplesLocalesGanadosPor(final String nombre, final String nombre2) {
         Session session = HibernateManager.instance().getSession();
+        
         Criteria criteria = session.createCriteria(PartidoSimple.class);
 
         Criteria criteriaEquipoA = criteria.createCriteria("equipoA");

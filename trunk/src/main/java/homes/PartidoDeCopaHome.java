@@ -15,6 +15,8 @@ public class PartidoDeCopaHome {
     @SuppressWarnings("unchecked")
     public List<Equipo> getPartidosDeCopaGanadosPorEquipo() {
         Session session = HibernateManager.instance().getSession();
+     
+        
         /*
          * Criteria criteria = session.createCriteria(PartidoDeCopa.class); Criteria criteria1 =
          * session.createCriteria(PartidoDeCopa.class); .groupProperty("title") Criteria criteriaEquipoLocal =
