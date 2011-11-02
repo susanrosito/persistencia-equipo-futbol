@@ -11,6 +11,6 @@ import junit.framework.TestCase;
 public class CambiarTecnicoTest extends TestCase {
 
     public void testApp() throws Exception {
-        HibernateManager.instance().runInSession(new CambiarTecnicoCommand("Equipo C", "Ruperto"));
+        HibernateManager.instance().runInSession(new CambiarTecnicoCommand("Equipo D", "Crustacio"));
     }
 }
