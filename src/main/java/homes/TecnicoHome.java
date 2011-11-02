@@ -13,13 +13,20 @@ import dominio.Tecnico;
  * TODO: description
  */
 public class TecnicoHome {
-    public Tecnico getByName(final String nombre) {
+    
+	public Tecnico getByName(final String nombre) {
         Session session = HibernateManager.instance().getSession();
-       
         Criteria criteria = session.createCriteria(Tecnico.class);
         criteria.add(Expression.eq("nombre", nombre));
         return (Tecnico) criteria.uniqueResult();
 
     }
-
+    
+    public void guardarTecnico(Tecnico tecnico ){
+    Session	session = HibernateManager.instance().getSession();
+    	session.save(tecnico);
+    }
+    
+    
+    
 }
