@@ -17,6 +17,7 @@ public class ArmarFormacionCommand implements Runnable{
     @Override
     public void run() {
         Equipo e = new EquipoHome().getByName(this.nombreEquipo);
+       
         System.out.println(e.getNombre());
         System.out.println(e.getTecnico());
         System.out.println("CALABAZA " + e.getTecnico().getFormacionStrategy());
