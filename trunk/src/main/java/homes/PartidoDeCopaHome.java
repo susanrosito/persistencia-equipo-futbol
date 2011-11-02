@@ -21,7 +21,7 @@ public class PartidoDeCopaHome {
          */
 
         Query query = session
-                .createQuery("select ganador from (select pc.ganadorP as ganador, count(*) as ganados from PartidoDeCopa as pc group by ganador order by ganados asc)");
+                .createQuery("select ganador from (select pc.ganadorP as ganador, count(*) as ganados from PartidoDeCopa as pc group by ganador order by ganados asc) as subQuery");
 
         return (ArrayList<Equipo>) query.list();
 
