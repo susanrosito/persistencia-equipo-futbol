@@ -8,6 +8,7 @@ public class ArmarFormacionTest extends TestCase{
 	
 	public void testApp() throws Exception {
         HibernateManager.instance().runInSession(new ArmarFormacionCommand("Equipo C"));
-    }
+    
+	}
 
 }
