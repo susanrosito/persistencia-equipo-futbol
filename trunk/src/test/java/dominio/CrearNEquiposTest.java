@@ -1,21 +1,19 @@
 package dominio;
 
-import interfaces.FormacionStrategy;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import commands.ArmarFormacionCommand;
+import junit.framework.TestCase;
+
 import commands.CrearNEquiposCommands;
 import commands.HibernateManager;
-
-import junit.framework.TestCase;
 
 public class CrearNEquiposTest extends TestCase {
 
 	private String[] nombresEquipo;
 	private String[] nombresTecnico;
+	private String[] nombresJugadores;
 	private List<Tecnico> tecnicos;
 	private List<Jugador> jugadores;
 	private FormacionStrategyImp formacion;
@@ -36,7 +34,7 @@ public class CrearNEquiposTest extends TestCase {
 		nombresEquipo[8] = "Gimnacia ";
 		nombresEquipo[9] = "Estudiantes ";
 
-		nombresTecnico = new String[10]; // allocates memory for 10 integers
+		nombresTecnico = new String[6]; // allocates memory for 10 integers
 
 		nombresTecnico[0] = "Cesar Rema "; // initialize first element
 		nombresTecnico[1] = "Migenso Figo "; // initialize second element
@@ -45,6 +43,20 @@ public class CrearNEquiposTest extends TestCase {
 		nombresTecnico[4] = "Veliztice Dogo ";
 		nombresTecnico[5] = "Lucas Martinez ";
 
+		
+		nombresJugadores = new String[10]; // allocates memory for 10 integers
+
+		nombresJugadores[0] = "Nicolas "; // initialize first element
+		nombresJugadores[1] = "Rodrigo "; // initialize second element
+		nombresJugadores[2] = "Carlos "; // etc.
+		nombresJugadores[3] = "Leonel ";
+		nombresJugadores[4] = "Cristian ";
+		nombresJugadores[5] = "Federico ";
+		nombresJugadores[6] = "Ronny ";
+		nombresJugadores[7] = "Pablo ";
+		nombresJugadores[8] = "Raul ";
+		nombresJugadores[9] = "Matias ";
+		
 		tecnicos = new ArrayList<Tecnico>();
 
 		jugadores = new ArrayList<Jugador>();
@@ -62,18 +74,29 @@ public class CrearNEquiposTest extends TestCase {
 	
 		formacion = new FormacionStrategyImp(posiciones); 
 		
-		for (int j = 0; j < 5000; j++) {
+		for (int t = 0; t < 5000; t++) {
 
 			Tecnico tecnico = new Tecnico();
-			tecnico.setNombre(nombresTecnico[new Random().nextInt(nombresTecnico.length)] + j);
+			tecnico.setNombre(nombresTecnico[new Random().nextInt(nombresTecnico.length)] + t);
 			tecnico.setFormacionStrategy(formacion);
 			this.tecnicos.add(tecnico);
 		}
-	};
+		
+		
+		
+		for (int j = 0; j < 40000 ; j++) {
 
+			Jugador jugador = new Jugador();
+			jugador.setNombre(nombresJugadores[new Random().nextInt(nombresJugadores.length )] + j);
+			jugador.setHabilidad(new HabilidadImp(posiciones.get(new Random().nextInt(9)), new Random().nextInt(11)) , 0);
+			this.jugadores.add(jugador);
+
+		
+	}
+}
 	public void testApp() throws Exception {
 
-		HibernateManager.instance().runInSession(new CrearNEquiposCommands(5000, nombresEquipo, tecnicos ));
+		HibernateManager.instance().runInSession(new CrearNEquiposCommands(5000, nombresEquipo, tecnicos, jugadores ));
 
 	}
 }
