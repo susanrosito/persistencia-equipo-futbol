@@ -2,6 +2,7 @@ package dominio;
 
 import interfaces.Nombrable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -16,7 +17,7 @@ public class Equipo implements Nombrable {
     private List<Jugador> jugadores;
 
     public Equipo() {
-
+    	this.jugadores = new ArrayList<Jugador>();
     }
 
     public Equipo(final String nombre, final Tecnico tec, final List<Jugador> jugadores) {
