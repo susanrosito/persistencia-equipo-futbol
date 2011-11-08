@@ -1,6 +1,5 @@
 package dominio;
 
-import interfaces.FormacionStrategy;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -9,7 +8,6 @@ import junit.framework.TestCase;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
 
 public class ConfigurationTest extends TestCase {
 
@@ -264,12 +262,12 @@ public class ConfigurationTest extends TestCase {
             FormacionStrategyImp fe1 = new FormacionStrategyImp(posiciones);
             System.out.println("FormaciónStrategy : " + fe1 + "SASASASASASASASASASASASA");
             session.saveOrUpdate(fe1);
-            ta.setFormacionStrategyImp(fe1);
+            ta.setFormacionStrategy(fe1);
 
             Tecnico tb = new Tecnico();
             tb.setNombre("Crustacio");
             FormacionStrategyImp fe = new FormacionStrategyImp(posiciones);
-            tb.setFormacionStrategyImp(fe);
+            tb.setFormacionStrategy(fe);
 
             Equipo eq1 = new Equipo();
             eq1.setJugadores(juga);
@@ -297,44 +295,31 @@ public class ConfigurationTest extends TestCase {
             eq5.setJugadores(juga2);
             eq5.setNombre("Equipo E");
             eq5.setTecnico(tb);
-            
+
             session.saveOrUpdate(eq2);
-            
+
             /*
-            for (int i = 0; i < 1000; i++) {
-                PartidoSimple ps = this.crearPartidoSimple(eq1, eq2);
-                session.saveOrUpdate(ps);
-            }
-
-            for (int i = 0; i < 1000; i++) {
-                PartidoSimple ps = this.crearPartidoSimple(eq2, eq3);
-                session.saveOrUpdate(ps);
-            }
-
-            for (int i = 0; i < 1000; i++) {
-                PartidoSimple ps = this.crearPartidoSimple(eq3, eq4);
-                session.saveOrUpdate(ps);
-            }
-
-            for (int i = 0; i < 1000; i++) {
-                PartidoSimple ps = this.crearPartidoSimple(eq4, eq5);
-                session.saveOrUpdate(ps);
-            }
-
-            for (int i = 0; i < 1000; i++) {
-                PartidoSimple ps = this.crearPartidoSimple(eq5, eq1);
-                session.saveOrUpdate(ps);
-            }
-
-            for (int i = 0; i < 1000; i++) {
-                PartidoDeCopa pc = this.crearPartidoDeCopa(eq3, eq5);
-                session.saveOrUpdate(pc);
-            }
-
-            for (int i = 0; i < 1000; i++) {
-                PartidoDeCopa pc = this.crearPartidoDeCopa(eq4, eq1);
-                session.saveOrUpdate(pc);
-            }*/
+             * for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq1, eq2);
+             * session.saveOrUpdate(ps); }
+             * 
+             * for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq2, eq3);
+             * session.saveOrUpdate(ps); }
+             * 
+             * for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq3, eq4);
+             * session.saveOrUpdate(ps); }
+             * 
+             * for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq4, eq5);
+             * session.saveOrUpdate(ps); }
+             * 
+             * for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq5, eq1);
+             * session.saveOrUpdate(ps); }
+             * 
+             * for (int i = 0; i < 1000; i++) { PartidoDeCopa pc = this.crearPartidoDeCopa(eq3, eq5);
+             * session.saveOrUpdate(pc); }
+             * 
+             * for (int i = 0; i < 1000; i++) { PartidoDeCopa pc = this.crearPartidoDeCopa(eq4, eq1);
+             * session.saveOrUpdate(pc); }
+             */
 
             // PartidoDeCopa pc = new PartidoDeCopa(); // pc.setEquipoA(eqa); // pc.setEquipoB(eqb); // pc.s
 

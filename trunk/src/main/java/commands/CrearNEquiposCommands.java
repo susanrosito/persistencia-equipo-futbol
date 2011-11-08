@@ -12,33 +12,37 @@ import dominio.Tecnico;
 
 public class CrearNEquiposCommands implements Runnable {
 
-	private int cantEquipos;
-	private List<Tecnico> tecnicos;
-	private String[] nombreE;
-	private List<Jugador> jugadores;
-	public CrearNEquiposCommands(int cantEquipos, String[] nombreEquipo,
-			List<Tecnico> tecnicos, List<Jugador> jugadores) {
+    private int cantEquipos;
 
-		this.cantEquipos = cantEquipos;
-		this.nombreE = nombreEquipo;
-		this.tecnicos = tecnicos;
-		this.jugadores = jugadores;
-	}
+    private List<Tecnico> tecnicos;
 
-	@Override
-	public void run() {
+    private String[] nombreE;
 
-		List<Equipo> misNequipos = new ArrayList<Equipo>(); 
-		
-		for (int i = 0; i < this.cantEquipos; i++) {
-			Equipo equipo = new Equipo();
-			equipo.setNombre(nombreE[new Random().nextInt(nombreE.length)]);
-			equipo.setTecnico(tecnicos.get(i));
-			equipo.getJugadores().add(this.jugadores.get(this.jugadores.size()));
-			misNequipos.add(equipo);
+    private List<Jugador> jugadores;
 
-		}
-		new EquipoHome().setNEquipos(misNequipos);
-	}
+    public CrearNEquiposCommands(final int cantEquipos, final String[] nombreEquipo, final List<Tecnico> tecnicos,
+            final List<Jugador> jugadores) {
+
+        this.cantEquipos = cantEquipos;
+        this.nombreE = nombreEquipo;
+        this.tecnicos = tecnicos;
+        this.jugadores = jugadores;
+    }
+
+    @Override
+    public void run() {
+
+        List<Equipo> misNequipos = new ArrayList<Equipo>();
+
+        for (int i = 0; i < this.cantEquipos; i++) {
+            Equipo equipo = new Equipo();
+            equipo.setNombre(this.nombreE[new Random().nextInt(this.nombreE.length)]);
+            equipo.setTecnico(this.tecnicos.get(i));
+            equipo.getJugadores().add(this.jugadores.get(this.jugadores.size() - 1));
+            misNequipos.add(equipo);
+
+        }
+        new EquipoHome().setNEquipos(misNequipos);
+    }
 
 }
