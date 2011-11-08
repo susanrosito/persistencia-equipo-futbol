@@ -23,6 +23,7 @@ public class ArmarFormacionCommand implements Runnable{
         System.out.println("CALABAZA " + e.getTecnico().getFormacionStrategyImp());
         Formacion f = e.armarFormacion();
         System.out.println(f);
+        System.out.println(f.getEquipo());
         System.out.println(e.getTecnico());
         //e.getTecnico().setFormacionStrategy(f);
     }
