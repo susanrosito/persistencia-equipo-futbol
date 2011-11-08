@@ -8,6 +8,7 @@ import java.util.List;
 
 public class FormacionStrategyImp implements FormacionStrategy {
     private List<Posicion> posiciones;
+    int id;
 
     public FormacionStrategyImp(final List<Posicion> posiciones) {
 
@@ -112,6 +113,13 @@ public class FormacionStrategyImp implements FormacionStrategy {
 
     public void setPosiciones(final List<Posicion> posiciones) {
         this.posiciones = posiciones;
+    }
+    
+    public int getId(){
+    	return this.id;
+    }
+    public void setId(int i){
+    	this.id = i;
     }
 
 }

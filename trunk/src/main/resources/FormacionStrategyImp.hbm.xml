@@ -8,16 +8,9 @@
 			<generator class="sequence" />
 		</id>
 		
-		<one-to-one name="equipo" cascade="all"></one-to-one>
-
-		<bag name="titulares" table="Titulares" cascade="all,delete-orphan">
-			<key column="formacion_id" />
-			<one-to-many class="dominio.Titular" />
-		</bag>
-		
 		<bag name="posiciones" table="Posiciones" cascade="all">
 			<key column="formacionStImp_id" />
-			<column name="H_POSICION" not-null="true" unique="false" />
+			<element type="Posicion" column="POS"/>
 		</bag>
 	</class>
 </hibernate-mapping>
