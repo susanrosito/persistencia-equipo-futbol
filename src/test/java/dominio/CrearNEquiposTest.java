@@ -78,7 +78,7 @@ public class CrearNEquiposTest extends TestCase {
 
 			Tecnico tecnico = new Tecnico();
 			tecnico.setNombre(nombresTecnico[new Random().nextInt(nombresTecnico.length)] + t);
-			tecnico.setFormacionStrategy(formacion);
+			tecnico.setFormacionStrategyImp(formacion);
 			this.tecnicos.add(tecnico);
 		}
 		

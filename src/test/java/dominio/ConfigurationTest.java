@@ -261,15 +261,15 @@ public class ConfigurationTest extends TestCase {
 
             Tecnico ta = new Tecnico();
             ta.setNombre("Anastacio");
-            FormacionStrategy fe1 = new FormacionStrategyImp(posiciones);
+            FormacionStrategyImp fe1 = new FormacionStrategyImp(posiciones);
             System.out.println("FormaciónStrategy : " + fe1 + "SASASASASASASASASASASASA");
             session.saveOrUpdate(fe1);
-            ta.setFormacionStrategy(fe1);
+            ta.setFormacionStrategyImp(fe1);
 
             Tecnico tb = new Tecnico();
             tb.setNombre("Crustacio");
-            FormacionStrategy fe = new FormacionStrategyImp(posiciones);
-            tb.setFormacionStrategy(fe);
+            FormacionStrategyImp fe = new FormacionStrategyImp(posiciones);
+            tb.setFormacionStrategyImp(fe);
 
             Equipo eq1 = new Equipo();
             eq1.setJugadores(juga);
@@ -285,6 +285,8 @@ public class ConfigurationTest extends TestCase {
             eq2.setJugadores(juga2);
             eq2.setNombre("Equipo B");
             eq2.setTecnico(tb);
+            Formacion f2 = eq2.armarFormacion();
+            session.saveOrUpdate(f2);
 
             Equipo eq4 = new Equipo();
             eq4.setJugadores(juga);
@@ -296,7 +298,7 @@ public class ConfigurationTest extends TestCase {
             eq5.setNombre("Equipo E");
             eq5.setTecnico(tb);
             
-            session.saveOrUpdate(eq3);
+            session.saveOrUpdate(eq2);
             
             /*
             for (int i = 0; i < 1000; i++) {

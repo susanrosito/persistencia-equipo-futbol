@@ -10,12 +10,12 @@ import junit.framework.Assert;
 import junit.framework.TestCase;
 
 public class TestTecnico extends TestCase {
-	  FormacionStrategy formacionStrategy;
+	  FormacionStrategyImp formacionStrategy;
 	  String nombre;
 	  Tecnico tec;
 		protected void setUp()
 		{
-			this.formacionStrategy = createMock(FormacionStrategy.class);
+			this.formacionStrategy = createMock(FormacionStrategyImp.class);
 			
 			this.nombre= "Domingo Augusto";
 			this.tec= new Tecnico(this.nombre, formacionStrategy);
@@ -31,7 +31,7 @@ public class TestTecnico extends TestCase {
 		public void testTecnico ()
 		{
 			Assert.assertEquals(this.nombre, this.tec.getNombre());
-			Assert.assertEquals(this.formacionStrategy, this.tec.getFormacionStrategy());
+			Assert.assertEquals(this.formacionStrategy, this.tec.getFormacionStrategyImp());
 		}
 
 		public void testArmarFormacion() {
