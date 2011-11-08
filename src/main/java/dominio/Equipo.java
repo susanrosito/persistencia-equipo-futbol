@@ -14,10 +14,9 @@ public class Equipo implements Nombrable {
 
     private String nombre;
 
-    private List<Jugador> jugadores;
+    private List<Jugador> jugadores = new ArrayList<Jugador>();
 
     public Equipo() {
-    	this.jugadores = new ArrayList<Jugador>();
     }
 
     public Equipo(final String nombre, final Tecnico tec, final List<Jugador> jugadores) {

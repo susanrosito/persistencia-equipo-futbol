@@ -279,7 +279,8 @@ public class ConfigurationTest extends TestCase {
             eq3.setNombre("Equipo C");
             eq3.setTecnico(ta);
 
-            Equipo eq2 = new Equipo();
+            Equipo eq2 = new 
+            Equipo();
             eq2.setJugadores(juga2);
             eq2.setNombre("Equipo B");
             eq2.setTecnico(tb);

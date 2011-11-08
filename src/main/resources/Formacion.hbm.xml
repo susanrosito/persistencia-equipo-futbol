@@ -9,7 +9,7 @@
 			<generator class="sequence" />
 		</id>
 		
-		<one-to-one name="equipo" cascade="all"></one-to-one>
+		<many-to-one name="equipo" cascade="all"></many-to-one>
 
 		<bag name="titulares" table="Titulares" cascade="all,delete-orphan">
 			<key column="formacion_id" />
