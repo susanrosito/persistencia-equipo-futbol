@@ -9,11 +9,11 @@ public class Tecnico implements Nombrable {
 
     private String nombre;
 
-    private FormacionStrategyImp formacionStrategyImp;
+    private FormacionStrategy formacionStrategy;
 
-    public Tecnico(final String nombre, final FormacionStrategyImp fsi) {
+    public Tecnico(final String nombre, final FormacionStrategy fsi) {
         this.nombre = nombre;
-        this.formacionStrategyImp = fsi;
+        this.formacionStrategy = fsi;
     }
 
     public Tecnico() {
@@ -26,15 +26,15 @@ public class Tecnico implements Nombrable {
     }
 
     public Formacion armarFormacion(final Equipo e) {
-        return this.formacionStrategyImp.armarFormacion(e);
+        return this.formacionStrategy.armarFormacion(e);
     }
 
-    public FormacionStrategyImp getFormacionStrategyImp() {
-        return this.formacionStrategyImp;
+    public FormacionStrategy getFormacionStrategy() {
+        return this.formacionStrategy;
     }
 
-    public void setFormacionStrategyImp(final FormacionStrategyImp formacionStrategy) {
-        this.formacionStrategyImp = formacionStrategy;
+    public void setFormacionStrategy(final FormacionStrategy formacionStrategy) {
+        this.formacionStrategy = formacionStrategy;
     }
 
     public void setNombre(final String nombre) {

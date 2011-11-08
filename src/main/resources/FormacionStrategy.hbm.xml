@@ -2,15 +2,22 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="dominio.FormacionStrategyImp" table="FormacionStrategyImp" catalog="public">
+	<class name="interfaces.FormacionStrategy" table="FormacionStrategy" catalog="public">
 		<id name="id" type="java.lang.Integer">
-			<column name="FSI_ID" />
+			<column name="FS_ID" />
 			<generator class="sequence" />
 		</id>
+		
+		<discriminator column="TIPO_FORMACION" type="string" />
+	
+	<subclass name="dominio.FormacionStrategyImp" discriminator-value="F_IMP">
+	
 		
 		<bag name="posiciones" table="Posiciones" cascade="all">
 			<key column="formacionStImp_id" />
 			<element type="Posicion" column="POS"/>
 		</bag>
+	
+		</subclass>
 	</class>
 </hibernate-mapping>

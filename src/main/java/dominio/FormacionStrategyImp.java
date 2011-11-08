@@ -5,9 +5,10 @@ import interfaces.FormacionStrategy;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class FormacionStrategyImp implements FormacionStrategy {
+
     private List<Posicion> posiciones;
+
     int id;
 
     public FormacionStrategyImp(final List<Posicion> posiciones) {
@@ -72,7 +73,7 @@ public class FormacionStrategyImp implements FormacionStrategy {
      * @return Titular
      */
     public Titular buscarMJugador(final List<Jugador> jugadores, final Posicion pos) {
-    
+
         int valor;
         Jugador jugadorElegido = jugadores.get(0);
         int mayor = jugadorElegido.getValor(pos);
@@ -114,12 +115,15 @@ public class FormacionStrategyImp implements FormacionStrategy {
     public void setPosiciones(final List<Posicion> posiciones) {
         this.posiciones = posiciones;
     }
-    
-    public int getId(){
-    	return this.id;
+
+    @Override
+    public int getId() {
+        return this.id;
     }
-    public void setId(int i){
-    	this.id = i;
+
+    @Override
+    public void setId(final int i) {
+        this.id = i;
     }
 
 }

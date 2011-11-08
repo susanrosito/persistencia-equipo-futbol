@@ -12,7 +12,7 @@
             <column name="T_NOMBRE" length="20" not-null="true" unique="false" />
         </property>
         
-        <many-to-one name="formacionStrategyImp" cascade="all" ></many-to-one>
+        <many-to-one name="formacionStrategy" cascade="all" ></many-to-one>
        
     </class>
 </hibernate-mapping>
