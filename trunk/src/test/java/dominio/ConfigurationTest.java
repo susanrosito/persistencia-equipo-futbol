@@ -279,8 +279,7 @@ public class ConfigurationTest extends TestCase {
             eq3.setNombre("Equipo C");
             eq3.setTecnico(ta);
 
-            Equipo eq2 = new 
-            Equipo();
+            Equipo eq2 = new Equipo();
             eq2.setJugadores(juga2);
             eq2.setNombre("Equipo B");
             eq2.setTecnico(tb);
@@ -297,12 +296,13 @@ public class ConfigurationTest extends TestCase {
             eq5.setNombre("Equipo E");
             eq5.setTecnico(tb);
 
-            session.saveOrUpdate(eq2);
+            // session.saveOrUpdate(eq2);
+
+            PartidoDeCopa pdc = this.crearPartidoDeCopa(eq1, eq2);
+
+            session.saveOrUpdate(pdc);
 
             /*
-             * for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq1, eq2);
-             * session.saveOrUpdate(ps); }
-             * 
              * for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq2, eq3);
              * session.saveOrUpdate(ps); }
              * 
