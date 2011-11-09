@@ -22,8 +22,6 @@ public class ArmarFormacionCommand implements Runnable {
  
         Formacion f = e.armarFormacion();
         
-
-        
         new FormacionHome().save(f);
 
     }
