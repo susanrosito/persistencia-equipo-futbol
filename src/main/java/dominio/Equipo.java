@@ -5,7 +5,6 @@ import interfaces.Nombrable;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Equipo implements Nombrable {
 
     private int id;
@@ -16,6 +15,10 @@ public class Equipo implements Nombrable {
 
     private List<Jugador> jugadores = new ArrayList<Jugador>();
 
+    private int cantPartidosSimplesGanados = 0;
+
+    private int cantPartidosDeCopaGanados = 0;
+
     public Equipo() {
     }
 
@@ -23,6 +26,7 @@ public class Equipo implements Nombrable {
         this.nombre = nombre;
         this.tecnico = tec;
         this.jugadores = jugadores;
+
     }
 
     public Formacion armarFormacion() {
@@ -63,4 +67,19 @@ public class Equipo implements Nombrable {
         return this.id;
     }
 
+    public void setCantPartidosSimplesGanados(final int cantPartidosSimplesGanados) {
+        this.cantPartidosSimplesGanados = cantPartidosSimplesGanados;
+    }
+
+    public int getCantPartidosSimplesGanados() {
+        return this.cantPartidosSimplesGanados;
+    }
+
+    public void setCantPartidosDeCopaGanados(int cantPartidosDeCopaGanados) {
+        this.cantPartidosDeCopaGanados = cantPartidosDeCopaGanados;
+    }
+
+    public int getCantPartidosDeCopaGanados() {
+        return cantPartidosDeCopaGanados;
+    }
 }

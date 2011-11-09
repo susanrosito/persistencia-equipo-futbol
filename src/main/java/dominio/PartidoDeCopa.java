@@ -25,41 +25,54 @@ public class PartidoDeCopa extends Partido {
     }
 
     @Override
-    public Equipo getGanador() {
+    public Equipo getGanadorP() {
         Equipo ganador = this.verificarGanador();
         if (ganador == null) {
             ganador = this.definicionPorPenales();
         }
+        ganador.setCantPartidosDeCopaGanados(ganador.getCantPartidosDeCopaGanados() + 1);
+
         this.ganadorP = ganador;
-        return ganador;
+
+        return this.ganadorP;
     }
 
     private Equipo definicionPorPenales() {
 
-        return null;
+        if (this.penalesConvertidosEquipoA > this.penalesConvertidosEquipoB) {
+            return this.getEquipoA();
+        } else {
+
+            return this.getEquipoB();
+
+        }
+
     }
 
     public Equipo verificarGanador() {
-        Equipo ganadorUno = this.primerPartido.getGanador();
-        Equipo ganadorDos = this.segundoPartido.getGanador();
+        Equipo ganadorUno = this.primerPartido.getGanadorP();
+        Equipo ganadorDos = this.segundoPartido.getGanadorP();
         Equipo ganadorGlobal = null;
 
-        if (ganadorUno == null & !(ganadorDos == null)) {
-            ganadorGlobal = ganadorDos;
-        } else {
-            if (!(ganadorUno == null) & ganadorDos == null) {
-                ganadorGlobal = ganadorUno;
+        if (!(ganadorUno == null && ganadorDos == null)) {
+
+            if (ganadorUno == null & ganadorDos != null) {
+                ganadorGlobal = ganadorDos;
             } else {
-                if (ganadorUno.equals(ganadorDos)) {
+                if (ganadorUno != null & ganadorDos == null) {
                     ganadorGlobal = ganadorUno;
                 } else {
                     if (ganadorUno.equals(ganadorDos)) {
                         ganadorGlobal = ganadorUno;
+                    } else {
+                        if (ganadorUno.equals(ganadorDos)) {
+                            ganadorGlobal = ganadorUno;
+                        }
                     }
                 }
             }
-        }
 
+        }
         return ganadorGlobal;
     }
 
@@ -107,10 +120,6 @@ public class PartidoDeCopa extends Partido {
 
     public void setGanadorP(final Equipo ganadorP) {
         this.ganadorP = ganadorP;
-    }
-
-    public Equipo getGanadorP() {
-        return this.ganadorP;
     }
 
 }
