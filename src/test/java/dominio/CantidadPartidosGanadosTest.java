@@ -11,9 +11,11 @@ import junit.framework.TestCase;
 public class CantidadPartidosGanadosTest extends TestCase  {
 
     public void testApp() throws Exception {
-        HibernateManager.instance().runInSession(new CantidadPartidosGanadosCommand("Equipo D", "Equipo E"));
-        HibernateManager.instance().runInSession(new CantidadPartidosGanadosCommand("Equipo E", "Equipo D"));
-    
+    	long ti = System.currentTimeMillis();
+        HibernateManager.instance().runInSession(new CantidadPartidosGanadosCommand("Equipo A", "Equipo B"));
+        HibernateManager.instance().runInSession(new CantidadPartidosGanadosCommand("Equipo B", "Equipo A"));
+        long td = System.currentTimeMillis() - ti;
+        System.out.println("La query tardó: " + td);
      
     }
 
