@@ -11,9 +11,8 @@
         <property name="hibernate.connection.password">hbm</property>
 
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         <property name="show_sql">true</property>
-
         
         <mapping resource="Jugador.hbm.xml"></mapping>
 		<mapping resource="Habilidad.hbm.xml"></mapping>

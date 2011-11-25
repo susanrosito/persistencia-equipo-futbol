@@ -38,7 +38,7 @@ public class CrearNEquiposCommands implements Runnable {
             Equipo equipo = new Equipo();
             equipo.setNombre(this.nombreE[new Random().nextInt(this.nombreE.length)]);
             equipo.setTecnico(this.tecnicos.get(i));
-            equipo.getJugadores().add(this.jugadores.get(this.jugadores.size() - 1));
+            equipo.getJugadores().add(this.jugadores.get(new Random().nextInt(this.jugadores.size() - 1)));
             misNequipos.add(equipo);
 
         }

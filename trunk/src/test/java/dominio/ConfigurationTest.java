@@ -261,7 +261,7 @@ public class ConfigurationTest extends TestCase {
             ta.setNombre("Anastacio");
             FormacionStrategyImp fe1 = new FormacionStrategyImp(posiciones);
             System.out.println("FormaciónStrategy : " + fe1 + "SASASASASASASASASASASASA");
-            session.saveOrUpdate(fe1);
+            //session.saveOrUpdate(fe1);
             ta.setFormacionStrategy(fe1);
 
             Tecnico tb = new Tecnico();
@@ -284,7 +284,7 @@ public class ConfigurationTest extends TestCase {
             eq2.setNombre("Equipo B");
             eq2.setTecnico(tb);
             Formacion f2 = eq2.armarFormacion();
-            session.saveOrUpdate(f2);
+           // session.saveOrUpdate(f2);
 
             Equipo eq4 = new Equipo();
             eq4.setJugadores(juga);
@@ -298,29 +298,29 @@ public class ConfigurationTest extends TestCase {
 
             // session.saveOrUpdate(eq2);
 
-            PartidoDeCopa pdc = this.crearPartidoDeCopa(eq1, eq2);
+            //PartidoDeCopa pdc = this.crearPartidoDeCopa(eq1, eq2);
 
-            session.saveOrUpdate(pdc);
+            //session.saveOrUpdate(pdc);
 
-            /*
-             * for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq2, eq3);
-             * session.saveOrUpdate(ps); }
-             * 
-             * for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq3, eq4);
-             * session.saveOrUpdate(ps); }
-             * 
-             * for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq4, eq5);
-             * session.saveOrUpdate(ps); }
-             * 
-             * for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq5, eq1);
-             * session.saveOrUpdate(ps); }
-             * 
-             * for (int i = 0; i < 1000; i++) { PartidoDeCopa pc = this.crearPartidoDeCopa(eq3, eq5);
-             * session.saveOrUpdate(pc); }
-             * 
-             * for (int i = 0; i < 1000; i++) { PartidoDeCopa pc = this.crearPartidoDeCopa(eq4, eq1);
-             * session.saveOrUpdate(pc); }
-             */
+            
+             for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq2, eq3);
+             session.saveOrUpdate(ps); }
+             
+            /* for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq3, eq4);
+             session.sav eOrUpdate(ps); }
+             
+             for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq4, eq5);
+             session.saveOrUpdate(ps); }
+             
+             for (int i = 0; i < 1000; i++) { PartidoSimple ps = this.crearPartidoSimple(eq5, eq1);
+             session.saveOrUpdate(ps); }
+             
+             for (int i = 0; i < 1000; i++) { PartidoDeCopa pc = this.crearPartidoDeCopa(eq3, eq5);
+             session.saveOrUpdate(pc); }
+             
+             for (int i = 0; i < 1000; i++) { PartidoDeCopa pc = this.crearPartidoDeCopa(eq4, eq1);
+             session.saveOrUpdate(pc); }
+            */
 
             // PartidoDeCopa pc = new PartidoDeCopa(); // pc.setEquipoA(eqa); // pc.setEquipoB(eqb); // pc.s
 
