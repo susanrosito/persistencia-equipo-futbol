@@ -1,14 +1,17 @@
 package homes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.classic.Session;
 import org.hibernate.criterion.Expression;
 
 import commands.HibernateManager;
 
 import dominio.Equipo;
+import dominio.PartidoSimple;
 
 
 /**
@@ -45,4 +48,12 @@ public class EquipoHome {
 		}
 		
 	}
+	
+	 public ArrayList<Equipo> getEquipos(){
+	        Session session = HibernateManager.instance().getSession();
+	        Query q = session.createQuery("from Equipo");
+	        return (ArrayList<Equipo>) q.list();
+	
+
+	 }
 }

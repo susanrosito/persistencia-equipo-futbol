@@ -30,7 +30,7 @@ public class PartidoDeCopa extends Partido {
         if (ganador == null) {
             ganador = this.definicionPorPenales();
         }
-        ganador.setCantPartidosDeCopaGanados(ganador.getCantPartidosDeCopaGanados() + 1);
+        //ganador.setCantPartidosDeCopaGanados(ganador.getCantPartidosDeCopaGanados() + 1);
 
         this.ganadorP = ganador;
 
