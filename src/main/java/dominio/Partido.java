@@ -40,7 +40,12 @@ public class Partido {
 
     }
 
-    public Equipo getEquipoA() {
+   // public void incrementarCantPartidosSimplesGanadosPor(Equipo equipo) {
+	//	equipo.setCantPartidosSimplesGanados(equipo.getCantPartidosSimplesGanados()+1);
+		
+//	}
+
+	public Equipo getEquipoA() {
         return this.equipoA;
     }
 
