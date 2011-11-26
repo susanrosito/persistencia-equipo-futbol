@@ -43,6 +43,10 @@ public class CrearNPartidosDeCopaRandomCommand implements Runnable{
 			int gP1e2 = nroRandom.nextInt(6);
 			int gP2e2 = nroRandom.nextInt(6);
 			int penalesE2 = nroRandom.nextInt(5);
+			
+			while(penalesE1 == penalesE2){
+				penalesE2 = nroRandom.nextInt(5);
+			}
 		
 			PartidoDeCopa partCopa = new PartidoDeCopa(eq1,eq2);
 			partCopa.getPrimerPartido().setGolesEquipoA(gP1e1);
@@ -51,6 +55,7 @@ public class CrearNPartidosDeCopaRandomCommand implements Runnable{
 			partCopa.getSegundoPartido().setGolesEquipoB(gP2e2);
 			partCopa.setPenalesConvertidosEquipoA(penalesE1);
 			partCopa.setPenalesConvertidosEquipoB(penalesE2);
+			partCopa.getGanadorP().incrementarCantPartidosDeCopaGanados();
 			
 			
 		
