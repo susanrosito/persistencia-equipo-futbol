@@ -36,6 +36,8 @@ public class PartidoDeCopa extends Partido {
 
         return this.ganadorP;
     }
+    
+    
 
     private Equipo definicionPorPenales() {
 

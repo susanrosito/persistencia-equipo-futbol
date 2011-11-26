@@ -29,6 +29,11 @@ public class Equipo implements Nombrable {
 
     }
 
+    public void incrementarCantPartidosDeCopaGanados(){
+    	this.cantPartidosDeCopaGanados = this.cantPartidosDeCopaGanados + 1;
+    }
+    
+    
     public Formacion armarFormacion() {
         return this.tecnico.armarFormacion(this);
     }
