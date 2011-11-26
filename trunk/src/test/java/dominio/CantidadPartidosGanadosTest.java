@@ -12,8 +12,8 @@ public class CantidadPartidosGanadosTest extends TestCase  {
 
     public void testApp() throws Exception {
     	long ti = System.currentTimeMillis();
-        HibernateManager.instance().runInSession(new CantidadPartidosGanadosCommand("Equipo A", "Equipo B"));
-        HibernateManager.instance().runInSession(new CantidadPartidosGanadosCommand("Equipo B", "Equipo A"));
+        HibernateManager.instance().runInSession(new CantidadPartidosGanadosCommand("Lanus ", "Gody Cruz "));
+        HibernateManager.instance().runInSession(new CantidadPartidosGanadosCommand("Gody Cruz ", "Lanus "));
         long td = System.currentTimeMillis() - ti;
         System.out.println("La query tardó: " + td);
      

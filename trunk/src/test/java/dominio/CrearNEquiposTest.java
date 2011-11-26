@@ -103,7 +103,7 @@ public class CrearNEquiposTest extends TestCase {
     	
     	long ti = System.currentTimeMillis();
         HibernateManager.instance().runInSession(
-                new CrearNEquiposCommands(20, this.nombresEquipo, this.tecnicos, this.jugadores));
+                new CrearNEquiposCommands(10, this.nombresEquipo, this.tecnicos, this.jugadores));
         
         long tf = System.currentTimeMillis() - ti;
         System.out.println("La ejecución ha tardado: "+ tf + " milisegundos");
