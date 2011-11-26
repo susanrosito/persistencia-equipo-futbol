@@ -9,6 +9,7 @@ import org.hibernate.classic.Session;
 import commands.HibernateManager;
 
 import dominio.Equipo;
+import dominio.PartidoDeCopa;
 
 public class PartidoDeCopaHome {
 
@@ -40,4 +41,12 @@ public class PartidoDeCopaHome {
          */
 
     }
+    
+    public void save(PartidoDeCopa pc){
+		Session session = HibernateManager.instance().getSession();
+		
+		session.saveOrUpdate(pc);		
+		
+	}
+    
 }

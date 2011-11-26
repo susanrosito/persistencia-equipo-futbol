@@ -3,12 +3,15 @@ package homes;
 import static org.hibernate.criterion.Restrictions.eq;
 import static org.hibernate.criterion.Restrictions.geProperty;
 
+import java.util.ArrayList;
+
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.classic.Session;
 
 import commands.HibernateManager;
 
+import dominio.Formacion;
 import dominio.PartidoSimple;
 
 
@@ -57,4 +60,24 @@ public class PartidoSimpleHome {
 
         return query.list().size();
     }
+    
+    public ArrayList<PartidoSimple> getPartidosSimples(){
+        Session session = HibernateManager.instance().getSession();
+        Query q = session.createQuery("from PartidoSimple");
+        return (ArrayList<PartidoSimple>) q.list();
+    }
+    
+    public void save(PartidoSimple ps){
+		Session session = HibernateManager.instance().getSession();
+		
+		session.saveOrUpdate(ps);		
+		
+	}
+    
+    
+    
 }
+
+
+
+
