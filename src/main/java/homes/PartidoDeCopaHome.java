@@ -3,8 +3,13 @@ package homes;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.classic.Session;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.ProjectionList;
+import org.hibernate.criterion.Projections;
+import org.hibernate.transform.BasicTransformerAdapter;
 
 import commands.HibernateManager;
 
@@ -24,9 +29,20 @@ public class PartidoDeCopaHome {
          * criteria.createCriteria("ganadorP"); criteriaEquipoLocal.add(eq("nombre", nombre)) .addOrder(
          * Order.desc("age") );
          */
+        
+        /* Criteria criteria = session.createCriteria(PartidoDeCopa.class);
+        final ProjectionList proyecciones = Projections.projectionList();
+        proyecciones.add(Projections.count("ganadorP"), "ganados");
+        proyecciones.add(Projections.groupProperty("ganadorP"));
+        criteria.setProjection(proyecciones);
+        criteria.addOrder(Order.desc("ganados"));
+        return criteria.list();
+        */
+        
 
         Query query = session
-                .createQuery("select pc.ganadorP, count(*) as ganados from PartidoDeCopa as pc group by pc.ganadorP order by ganados asc");
+        .createQuery("select pc.ganadorP from PartidoDeCopa as pc group by pc.ganadorP order by count(*) asc");
+        
 
         List<Equipo> equipos = new ArrayList<Equipo>();
 
@@ -40,6 +56,16 @@ public class PartidoDeCopaHome {
          * criteria.add(geProperty("golesEquipoA", "golesEquipoB")); return criteria.list().size();
          */
 
+    }
+    
+    public int cantidadDePartidosDeCopaGanadosPor(Equipo eq){
+        Session session = HibernateManager.instance().getSession();
+
+        Query query = session
+        .createQuery("from PartidoDeCopa as pc where (pc.ganadorP.nombre = ?)");
+        query.setString(0, eq.getNombre());
+        
+        return query.list().size();
     }
     
     public void save(PartidoDeCopa pc){
