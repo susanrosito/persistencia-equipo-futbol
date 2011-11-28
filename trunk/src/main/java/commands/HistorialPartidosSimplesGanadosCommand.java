@@ -5,13 +5,13 @@ import homes.PartidoSimpleHome;
 /**
  * TODO: description
  */
-public class CantidadPartidosGanadosCommand implements Runnable {
+public class HistorialPartidosSimplesGanadosCommand implements Runnable {
 
     private final String nombreEquipoA;
 
     private final String nombreEquipoB;
 
-    public CantidadPartidosGanadosCommand(final String equipoA, final String equipoB) {
+    public HistorialPartidosSimplesGanadosCommand(final String equipoA, final String equipoB) {
 
         this.nombreEquipoA = equipoA;
         this.nombreEquipoB = equipoB;

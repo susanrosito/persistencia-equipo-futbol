@@ -1,6 +1,7 @@
 package homes;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -36,6 +37,23 @@ public class PartidoDeCopaHome {
     	Query q = session.createQuery("from PartidoDeCopa");
         return (ArrayList<PartidoDeCopa>) q.list();
     }
+    
+    /**
+     * Consulta que muestra la lista de los equipos que tienen mayor cantidad de victorias de copa
+     * optimisando la consulta al agregar una columna en la tabla de equipos que por cada uno lleva la 
+     * cuenta de cuántos partidos de copa ganó.
+     * @return
+     */
+    
+    public List<Object[]> getPartidosDeCopaGanadosPorEquipoPerformante() {
+        Session session = HibernateManager.instance().getSession();
+        Query query = session
+                .createQuery("select eq.nombre, eq.cantPartidosDeCopaGanados from Equipo as eq order by eq.cantPartidosDeCopaGanados desc");
+        
+        
+        return query.list();
+    }
+    
     
     public void save(PartidoDeCopa pc){
 		Session session = HibernateManager.instance().getSession();

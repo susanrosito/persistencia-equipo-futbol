@@ -4,6 +4,7 @@
  
 <hibernate-mapping>
     <class name="dominio.Equipo" table="Equipos" catalog="public">
+    <cache region="cache_pers" usage="nonstrict-read-write"></cache>
         <id name="id" type="java.lang.Integer">
             <column name="E_ID" />
             <generator class="sequence" />
