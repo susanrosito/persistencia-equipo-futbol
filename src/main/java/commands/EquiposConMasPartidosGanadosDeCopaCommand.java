@@ -17,7 +17,7 @@ import java.util.TreeSet;
 import dominio.Equipo;
 import dominio.EquipoYVictoriasDeCopa;
 
-public class EquiposConMasPartidosGanadosCommand implements Runnable {
+public class EquiposConMasPartidosGanadosDeCopaCommand implements Runnable {
 
     @Override
     public void run() {

@@ -51,7 +51,7 @@ public class EquipoHome {
 	
 	 public ArrayList<Equipo> getEquipos(){
 	        Session session = HibernateManager.instance().getSession();
-	        Query q = session.createQuery("from Equipo");
+	        Query q = session.createQuery("from Equipo").setCacheable(true);
 	        return (ArrayList<Equipo>) q.list();
 	
 
