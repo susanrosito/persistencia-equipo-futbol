@@ -11,7 +11,7 @@ import org.hibernate.cfg.Configuration;
 
 public class ConfigurationTest extends TestCase {
 
-    @SuppressWarnings({ "unused", "deprecation" })
+
     public PartidoSimple crearPartidoSimple(final Equipo eqa, final Equipo eqb) {
         PartidoSimple p = new PartidoSimple(eqa, eqb);
         int cgA = new Random().nextInt(6);
@@ -283,7 +283,7 @@ public class ConfigurationTest extends TestCase {
             eq2.setJugadores(juga2);
             eq2.setNombre("Equipo B");
             eq2.setTecnico(tb);
-            Formacion f2 = eq2.armarFormacion();
+           // Formacion f2 = eq2.armarFormacion();
            // session.saveOrUpdate(f2);
 
             Equipo eq4 = new Equipo();
