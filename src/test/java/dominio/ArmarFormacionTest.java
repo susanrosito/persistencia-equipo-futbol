@@ -1,10 +1,9 @@
 package dominio;
 
-import java.util.Random;
+import junit.framework.TestCase;
 
 import commands.ArmarFormacionCommand;
 import commands.HibernateManager;
-import junit.framework.TestCase;
 
 public class ArmarFormacionTest extends TestCase{
 	
