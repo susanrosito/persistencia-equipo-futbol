@@ -37,6 +37,11 @@ public class Equipo implements Nombrable {
     public Formacion armarFormacion() {
         return this.tecnico.armarFormacion(this);
     }
+    
+    public String toString(){
+		return this.nombre;
+    	
+    }
 
     @Override
     public String getNombre() {
