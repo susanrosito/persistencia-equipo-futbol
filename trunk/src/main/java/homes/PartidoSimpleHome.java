@@ -1,23 +1,10 @@
 package homes;
 
-import static org.hibernate.criterion.Restrictions.eq;
-import static org.hibernate.criterion.Restrictions.geProperty;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.SortedMap;
-import java.util.TreeMap;
-
-import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.classic.Session;
-
 import commands.HibernateManager;
-
-import dominio.Equipo;
-import dominio.Formacion;
-import dominio.PartidoDeCopa;
 import dominio.PartidoSimple;
 
 
