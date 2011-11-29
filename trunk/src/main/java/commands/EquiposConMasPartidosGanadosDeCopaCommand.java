@@ -2,18 +2,11 @@ package commands;
 
 import homes.EquipoHome;
 import homes.PartidoDeCopaHome;
-import homes.PartidoSimpleHome;
-
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
-import java.util.SortedMap;
 import java.util.SortedSet;
-import java.util.TreeMap;
 import java.util.TreeSet;
-
 import dominio.Equipo;
 import dominio.EquipoYVictoriasDeCopa;
 
@@ -37,7 +30,6 @@ public class EquiposConMasPartidosGanadosDeCopaCommand implements Runnable {
     	for(Equipo eq: equipos){
     		listaEqCantPCG.add(new EquipoYVictoriasDeCopa(eq, new PartidoDeCopaHome().cantidadDePartidosDeCopaGanadosPor(eq)));
     	}
-    	
     	for( Iterator<EquipoYVictoriasDeCopa> it = listaEqCantPCG.iterator(); it.hasNext();) {
 
     		EquipoYVictoriasDeCopa eq = (EquipoYVictoriasDeCopa)it.next();

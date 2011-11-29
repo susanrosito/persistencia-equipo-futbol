@@ -10,7 +10,6 @@ import dominio.Tecnico;
  */
 public class CambiarTecnicoCommand implements Runnable {
     private final String nombreTecnico;
-
     private final String nombreEquipo;
 
     public CambiarTecnicoCommand(final String nombreEquipo, final String nombreTecnico) {

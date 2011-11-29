@@ -8,11 +8,9 @@ import homes.PartidoSimpleHome;
 public class HistorialPartidosSimplesGanadosCommand implements Runnable {
 
     private final String nombreEquipoA;
-
     private final String nombreEquipoB;
 
     public HistorialPartidosSimplesGanadosCommand(final String equipoA, final String equipoB) {
-
         this.nombreEquipoA = equipoA;
         this.nombreEquipoB = equipoB;
     }

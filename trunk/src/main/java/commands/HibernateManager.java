@@ -11,9 +11,7 @@ import org.hibernate.classic.Session;
 public class HibernateManager {
 
     private static HibernateManager inst = new HibernateManager();
-
     private final SessionFactory sessionFactory;
-
     private ThreadLocal<Session> sessionThreadLocal = new ThreadLocal<Session>();
 
     public HibernateManager() {

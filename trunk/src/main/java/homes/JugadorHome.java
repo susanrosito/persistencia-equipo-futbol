@@ -5,9 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.classic.Session;
 import org.hibernate.criterion.Expression;
-
 import commands.HibernateManager;
-
 import dominio.Jugador;
 
 

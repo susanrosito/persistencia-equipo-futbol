@@ -2,126 +2,116 @@ package dominio;
 
 public class PartidoDeCopa extends Partido {
 
-    private PartidoSimple primerPartido;
+	private PartidoSimple primerPartido;
+	private PartidoSimple segundoPartido;
+	private int penalesConvertidosEquipoA;
+	private int penalesConvertidosEquipoB;
+	private Equipo ganadorP;
+	private int id;
 
-    private PartidoSimple segundoPartido;
+	public PartidoDeCopa(final Equipo a, final Equipo b) {
+		super(a, b);
+		this.primerPartido = new PartidoSimple(a, b);
+		this.segundoPartido = new PartidoSimple(a, b);
+		// this.setGanadorP(this.getGanador());
+	}
 
-    private int penalesConvertidosEquipoA;
+	public PartidoDeCopa() {
+	}
 
-    private int penalesConvertidosEquipoB;
+	@Override
+	public Equipo getGanadorP() {
+		Equipo ganador = this.verificarGanador();
+		if (ganador == null) {
+			ganador = this.definicionPorPenales();
+		}
+		// ganador.setCantPartidosDeCopaGanados(ganador.getCantPartidosDeCopaGanados()
+		// + 1);
 
-    private Equipo ganadorP;
+		this.ganadorP = ganador;
+		return this.ganadorP;
+	}
 
-    private int id;
+	private Equipo definicionPorPenales() {
+		if (this.penalesConvertidosEquipoA > this.penalesConvertidosEquipoB) {
+			return this.getEquipoA();
+		} else {
+			return this.getEquipoB();
+		}
+	}
 
-    public PartidoDeCopa(final Equipo a, final Equipo b) {
-        super(a, b);
-        this.primerPartido = new PartidoSimple(a, b);
-        this.segundoPartido = new PartidoSimple(a, b);
-        // this.setGanadorP(this.getGanador());
-    }
+	public Equipo verificarGanador() {
+		Equipo ganadorUno = this.primerPartido.getGanadorP();
+		Equipo ganadorDos = this.segundoPartido.getGanadorP();
+		Equipo ganadorGlobal = null;
 
-    public PartidoDeCopa() {
-    }
+		if (!(ganadorUno == null && ganadorDos == null)) {
 
-    @Override
-    public Equipo getGanadorP() {
-        Equipo ganador = this.verificarGanador();
-        if (ganador == null) {
-            ganador = this.definicionPorPenales();
-        }
-        //ganador.setCantPartidosDeCopaGanados(ganador.getCantPartidosDeCopaGanados() + 1);
+			if (ganadorUno == null & ganadorDos != null) {
+				ganadorGlobal = ganadorDos;
+			} else {
+				if (ganadorUno != null & ganadorDos == null) {
+					ganadorGlobal = ganadorUno;
+				} else {
+					if (ganadorUno.equals(ganadorDos)) {
+						ganadorGlobal = ganadorUno;
+					} else {
+						if (ganadorUno.equals(ganadorDos)) {
+							ganadorGlobal = ganadorUno;
 
-        this.ganadorP = ganador;
+						}
+					}
+				}
+			}
 
-        return this.ganadorP;
-    }
-    
-    
+		}
+		return ganadorGlobal;
+	}
 
-    private Equipo definicionPorPenales() {
+	public PartidoSimple getPrimerPartido() {
+		return this.primerPartido;
+	}
 
-        if (this.penalesConvertidosEquipoA > this.penalesConvertidosEquipoB) {
-            return this.getEquipoA();
-        } else {
+	public void setPrimerPartido(final PartidoSimple primerPartido) {
+		this.primerPartido = primerPartido;
+	}
 
-            return this.getEquipoB();
+	public int getPenalesConvertidosEquipoA() {
+		return this.penalesConvertidosEquipoA;
+	}
 
-        }
+	public void setPenalesConvertidosEquipoA(final int n) {
+		this.penalesConvertidosEquipoA = n;
+	}
 
-    }
+	public int getPenalesConvertidosEquipoB() {
+		return this.penalesConvertidosEquipoB;
+	}
 
-    public Equipo verificarGanador() {
-        Equipo ganadorUno = this.primerPartido.getGanadorP();
-        Equipo ganadorDos = this.segundoPartido.getGanadorP();
-        Equipo ganadorGlobal = null;
+	public void setPenalesConvertidosEquipoB(final int n) {
+		this.penalesConvertidosEquipoB = n;
+	}
 
-        if (!(ganadorUno == null && ganadorDos == null)) {
+	public PartidoSimple getSegundoPartido() {
+		return this.segundoPartido;
+	}
 
-            if (ganadorUno == null & ganadorDos != null) {
-                ganadorGlobal = ganadorDos;
-            } else {
-                if (ganadorUno != null & ganadorDos == null) {
-                    ganadorGlobal = ganadorUno;
-                } else {
-                    if (ganadorUno.equals(ganadorDos)) {
-                        ganadorGlobal = ganadorUno;
-                    } else {
-                        if (ganadorUno.equals(ganadorDos)) {
-                            ganadorGlobal = ganadorUno;
-                        }
-                    }
-                }
-            }
+	public void setSegundoPartido(final PartidoSimple segundoPartido) {
+		this.segundoPartido = segundoPartido;
+	}
 
-        }
-        return ganadorGlobal;
-    }
+	@Override
+	public int getId() {
+		return this.id;
+	}
 
-    public PartidoSimple getPrimerPartido() {
-        return this.primerPartido;
-    }
+	@Override
+	public void setId(final int id) {
+		this.id = id;
+	}
 
-    public void setPrimerPartido(final PartidoSimple primerPartido) {
-        this.primerPartido = primerPartido;
-    }
-
-    public int getPenalesConvertidosEquipoA() {
-        return this.penalesConvertidosEquipoA;
-    }
-
-    public void setPenalesConvertidosEquipoA(final int n) {
-        this.penalesConvertidosEquipoA = n;
-    }
-
-    public int getPenalesConvertidosEquipoB() {
-        return this.penalesConvertidosEquipoB;
-    }
-
-    public void setPenalesConvertidosEquipoB(final int n) {
-        this.penalesConvertidosEquipoB = n;
-    }
-
-    public PartidoSimple getSegundoPartido() {
-        return this.segundoPartido;
-    }
-
-    public void setSegundoPartido(final PartidoSimple segundoPartido) {
-        this.segundoPartido = segundoPartido;
-    }
-
-    @Override
-    public int getId() {
-        return this.id;
-    }
-
-    @Override
-    public void setId(final int id) {
-        this.id = id;
-    }
-
-    public void setGanadorP(final Equipo ganadorP) {
-        this.ganadorP = ganadorP;
-    }
+	public void setGanadorP(final Equipo ganadorP) {
+		this.ganadorP = ganadorP;
+	}
 
 }

@@ -20,46 +20,32 @@ import junit.framework.TestCase;
 public class TestFormacionStrategyImp extends TestCase {
 
     Formacion formacion;
-
     Equipo equipo;
-
     FormacionStrategyImp formacionImp;
-
+    
     ArrayList<Jugador> jugadores;
-
     ArrayList<Posicion> posiciones;
-
     ArrayList<Titular> titulares;
-
+    
     Jugador jugadorEn;
-
     Jugador jugadorUr;
-
     Jugador jugadorAr;
-
     Jugador jugadorVe;
-
     Jugador jugadorSe;
-
     Jugador jugadorDe;
-
     Jugador jugadorNy;
-
     Jugador jugadorTi;
 
     Titular titularE;
-
     Titular titularV;
-
     Titular titularD;
 
     @Override
     protected void setUp() {
 
         this.formacion = createMock(Formacion.class);
-
         this.equipo = createMock(Equipo.class);
-
+        
         this.jugadorAr = createMock(Jugador.class);
         this.jugadorDe = createMock(Jugador.class);
         this.jugadorEn = createMock(Jugador.class);
@@ -95,15 +81,12 @@ public class TestFormacionStrategyImp extends TestCase {
 
     @Override
     protected void tearDown() throws Exception {
-
         this.formacion = null;
         this.titularE = null;
     }
 
     public void testFormacionStrategyImp() {
-
         Assert.assertEquals(this.posiciones, this.formacionImp.getPosiciones());
-
     }
 
     public void testBuscarMJugador() {

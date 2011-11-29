@@ -57,8 +57,6 @@ public class CrearNPartidosDeCopaRandomCommand implements Runnable{
 			partCopa.setPenalesConvertidosEquipoB(penalesE2);
 			partCopa.getGanadorP().incrementarCantPartidosDeCopaGanados();
 			
-			
-		
 			new PartidoDeCopaHome().save(partCopa);
 			this.cantPC = this. cantPC - 1;
 		}

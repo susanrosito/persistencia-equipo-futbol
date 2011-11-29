@@ -9,15 +9,12 @@ import junit.framework.TestCase;
 
 public class TestTecnico extends TestCase {
     FormacionStrategyImp formacionStrategy;
-
     String nombre;
-
     Tecnico tec;
 
     @Override
     protected void setUp() {
         this.formacionStrategy = createMock(FormacionStrategyImp.class);
-
         this.nombre = "Domingo Augusto";
         this.tec = new Tecnico(this.nombre, this.formacionStrategy);
     }
@@ -25,7 +22,6 @@ public class TestTecnico extends TestCase {
     @Override
     protected void tearDown() {
         this.formacionStrategy = null;
-
         this.nombre = null;
         this.tec = null;
     }
@@ -46,11 +42,6 @@ public class TestTecnico extends TestCase {
     public void testGetNombre() {
 
         Assert.assertEquals(this.nombre, this.tec.getNombre());
-    }
-
-    public static void main(final String[] args) {
-        // TODO Auto-generated method stub
-
     }
 
 }

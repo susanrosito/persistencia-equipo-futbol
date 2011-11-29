@@ -6,9 +6,7 @@ import junit.framework.TestCase;
 
 public class TestPartido extends TestCase {
     Equipo equipoA;
-
     Equipo equipoB;
-
     Partido partido;
 
     @Override

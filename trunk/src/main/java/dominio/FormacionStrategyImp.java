@@ -8,17 +8,13 @@ import java.util.List;
 public class FormacionStrategyImp implements FormacionStrategy {
 
     private List<Posicion> posiciones;
-
     int id;
 
     public FormacionStrategyImp(final List<Posicion> posiciones) {
-
         this.posiciones = posiciones;
-
     }
 
     public FormacionStrategyImp() {
-
     }
 
     @Override
@@ -98,13 +94,10 @@ public class FormacionStrategyImp implements FormacionStrategy {
             formacion.getTitulares().add(titular);
 
         }
-
         return formacion;
-
     }
 
     public Jugador getSuplente(final int i, final Formacion f) {
-
         return f.getSuplentes().get(i);
     }
 

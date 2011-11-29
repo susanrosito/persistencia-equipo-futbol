@@ -13,11 +13,8 @@ import dominio.Tecnico;
 public class CrearNEquiposCommands implements Runnable {
 
     private int cantEquipos;
-
     private List<Tecnico> tecnicos;
-
     private String[] nombreE;
-
     private List<Jugador> jugadores;
 
     public CrearNEquiposCommands(final int cantEquipos, final String[] nombreEquipo, final List<Tecnico> tecnicos,
@@ -31,9 +28,8 @@ public class CrearNEquiposCommands implements Runnable {
 
     @Override
     public void run() {
-
         List<Equipo> misNequipos = new ArrayList<Equipo>();
-
+    
         for (int i = 0; i < this.cantEquipos; i++) {
             Equipo equipo = new Equipo();
             equipo.setNombre(this.nombreE[new Random().nextInt(this.nombreE.length)]);

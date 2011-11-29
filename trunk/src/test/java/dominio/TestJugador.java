@@ -16,15 +16,10 @@ import junit.framework.TestCase;
 
 public class TestJugador extends TestCase {
     String nombre;
-
     HabilidadImp mockHab1;
-
     HabilidadImp mockHab2;
-
     HabilidadImp mockHab3;
-
     HashSet<HabilidadImp> habilidades;
-
     Jugador jugador;
 
     @Override
