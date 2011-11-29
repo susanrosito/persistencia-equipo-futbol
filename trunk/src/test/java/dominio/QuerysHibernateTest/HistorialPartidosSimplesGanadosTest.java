@@ -1,4 +1,4 @@
-package dominio;
+package dominio.QuerysHibernateTest;
 
 import commands.HistorialPartidosSimplesGanadosCommand;
 import commands.HibernateManager;

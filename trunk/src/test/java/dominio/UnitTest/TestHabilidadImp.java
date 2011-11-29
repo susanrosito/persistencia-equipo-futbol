@@ -1,4 +1,4 @@
-package dominio;
+package dominio.UnitTest;
 
 import interfaces.Habilidad;
 import dominio.HabilidadImp;

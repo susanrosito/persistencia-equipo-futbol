@@ -1,4 +1,4 @@
-package dominio;
+package dominio.QuerysHibernateTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,11 @@ import junit.framework.TestCase;
 
 import commands.CrearNEquiposCommands;
 import commands.HibernateManager;
+import dominio.FormacionStrategyImp;
+import dominio.HabilidadImp;
+import dominio.Jugador;
+import dominio.Posicion;
+import dominio.Tecnico;
 
 public class CrearNEquiposTest extends TestCase {
 

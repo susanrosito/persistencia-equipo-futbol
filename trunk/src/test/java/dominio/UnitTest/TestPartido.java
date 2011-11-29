@@ -1,6 +1,8 @@
-package dominio;
+package dominio.UnitTest;
 
 import static org.easymock.EasyMock.createMock;
+import dominio.Equipo;
+import dominio.Partido;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
