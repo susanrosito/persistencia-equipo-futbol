@@ -7,7 +7,7 @@ import commands.HibernateManager;
 public class ArmarFormacionTest extends TestCase{
 	
 	public void testApp() throws Exception {
-       HibernateManager.instance().runInSession(new ArmarFormacionCommand("Equipo B"));
+       HibernateManager.instance().runInSession(new ArmarFormacionCommand("Racing "));
 		
 	}
 

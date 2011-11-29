@@ -20,22 +20,15 @@ public class Partido {
 
     public Equipo getGanadorP() {
         if (this.golesEquipoA > this.golesEquipoB) {
-            this.equipoA.setCantPartidosSimplesGanados(this.equipoA.getCantPartidosSimplesGanados() + 1);
             return this.equipoA;
         } else {
             if (this.golesEquipoA < this.golesEquipoB) {
-                this.equipoB.setCantPartidosSimplesGanados(this.equipoB.getCantPartidosSimplesGanados() + 1);
                 return this.equipoB;
             } else {
                 return null;
             }
         }
     }
-
-   //  ?? public void incrementarCantPartidosSimplesGanadosPor(Equipo equipo) {
-	//	equipo.setCantPartidosSimplesGanados(equipo.getCantPartidosSimplesGanados()+1);
-		
-//	}
 
 	public Equipo getEquipoA() {
         return this.equipoA;
