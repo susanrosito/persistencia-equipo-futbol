@@ -1,21 +1,20 @@
-package dominio;
+package dominio.QuerysHibernateTest;
+
+import commands.CrearNPartidosSimplesRandomCommand;
+import commands.HibernateManager;
 
 import junit.framework.TestCase;
 
-import commands.EquiposConMasPartidosDeCopaGanadosCommandPerformante;
-import commands.HibernateManager;
+public class CrearNPartidosSimplesTest extends TestCase {
 
-public class EquiposConMasPartidosGanadosPerformanteTest extends TestCase {
 	public void testApp() throws Exception {
-
 		long ti = System.currentTimeMillis();
 
 		HibernateManager.instance().runInSession(
-				new EquiposConMasPartidosDeCopaGanadosCommandPerformante());
+				new CrearNPartidosSimplesRandomCommand(5000));
 
 		long tf = System.currentTimeMillis() - ti;
 		System.out.println("La ejecución ha tardado: " + tf + " milisegundos");
 
 	}
-
 }

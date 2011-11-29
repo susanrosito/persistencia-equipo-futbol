@@ -1,4 +1,4 @@
-package dominio;
+package dominio.UnitTest;
 
 import static org.easymock.EasyMock.createMock;
 import dominio.Jugador;

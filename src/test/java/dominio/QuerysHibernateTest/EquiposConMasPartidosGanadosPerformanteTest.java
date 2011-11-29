@@ -1,23 +1,21 @@
-package dominio;
+package dominio.QuerysHibernateTest;
 
 import junit.framework.TestCase;
 
-import commands.EquiposConMasPartidosGanadosDeCopaCommand;
+import commands.EquiposConMasPartidosDeCopaGanadosCommandPerformante;
 import commands.HibernateManager;
 
-/**
- * TODO: description
- */
-public class EquiposConMasPartidosDeCopaGanadosTest extends TestCase {
+public class EquiposConMasPartidosGanadosPerformanteTest extends TestCase {
 	public void testApp() throws Exception {
 
 		long ti = System.currentTimeMillis();
 
 		HibernateManager.instance().runInSession(
-				new EquiposConMasPartidosGanadosDeCopaCommand());
+				new EquiposConMasPartidosDeCopaGanadosCommandPerformante());
 
 		long tf = System.currentTimeMillis() - ti;
 		System.out.println("La ejecución ha tardado: " + tf + " milisegundos");
 
 	}
+
 }

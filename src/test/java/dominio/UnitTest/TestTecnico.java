@@ -1,9 +1,11 @@
-package dominio;
+package dominio.UnitTest;
 
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
+import dominio.FormacionStrategyImp;
+import dominio.Tecnico;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 

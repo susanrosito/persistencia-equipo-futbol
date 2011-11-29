@@ -1,4 +1,4 @@
-package dominio;
+package dominio.QuerysHibernateTest;
 
 import junit.framework.TestCase;
 import commands.ArmarFormacionCommand;
