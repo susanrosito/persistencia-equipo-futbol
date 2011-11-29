@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="dominio.Equipo" table="Equipos" catalog="public">
+    <cache region="cache_pers" usage="nonstrict-read-write"></cache>
+        <id name="id" type="java.lang.Integer">
+            <column name="E_ID" />
+            <generator class="sequence" />
+        </id>
+        
+        <property name="nombre" type="string">
+            <column name="E_NOMBRE" length="20" not-null="true" unique="false" />
+        </property>
+        
+        <many-to-one name="tecnico" cascade="all" ></many-to-one>
+    	
+    	<bag name="jugadores" table="jugador"  cascade="all">
+			 <key column="equipo" ></key>
+			 <one-to-many class="dominio.Jugador"/>
+    	</bag>
+   	
+   		<property name="cantPartidosDeCopaGanados" type="int">
+			<column name="E_CantPDCGanados" not-null="false" unique="false" />
+		</property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+	<class name="dominio.Partido" table="Partido" catalog="public">
+	<cache region="cache_pers" usage="nonstrict-read-write"></cache>
+        <id name="id" type="java.lang.Integer">
+            <column name="P_ID" />
+            <generator class="sequence" />
+        </id>
+        <discriminator column="PARTIDO_TIPO" type="string"/>
+        
+		<many-to-one name="equipoA" cascade="all" ></many-to-one>
+		<many-to-one name="equipoB" cascade="all" ></many-to-one>
+		
+		
+		<property name="golesEquipoA" type="int">
+	            <column name="PS_GOLESEQUIPOA" not-null="true" unique="false" />
+        </property>
+	    <property name="golesEquipoB" type="int">
+	            <column name="PS_GOLESEQUIPOB" not-null="true" unique="false" />
+        </property>
+        
+        
+        
+		
+		<subclass name="dominio.PartidoSimple" discriminator-value="Simple">
+            <many-to-one name="formacionA" cascade="all" ></many-to-one>
+            <many-to-one name="formacionB" cascade="all" ></many-to-one>
+   		</subclass>
+   		
+   		<subclass name="dominio.PartidoDeCopa" discriminator-value="Copa">
+   		
+            <many-to-one name="primerPartido" cascade="all" ></many-to-one>
+            <many-to-one name="segundoPartido" cascade="all" ></many-to-one>
+            <one-to-one name = "ganadorP" cascade = "all"></one-to-one>
+            
+            <property name="penalesConvertidosEquipoA" type="int">
+	            <column name="PC_PENALESEQUIPOA" not-null="false" unique="false" />
+        	</property>
+        	
+        	<property name="penalesConvertidosEquipoB" type="int">
+	            <column name="PC_PENALESEQUIPOB" not-null="false" unique="false" />
+        	</property>
+        	
+   		</subclass>
+	
+        
+    </class>
+</hibernate-mapping>
