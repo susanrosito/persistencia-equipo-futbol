@@ -13,26 +13,19 @@ public class TestTitular extends TestCase {
 	Titular titular;
 	Jugador jugador;
 
-	
-	protected void setUp()
-	{
+	protected void setUp(){
 		this.posicion = Posicion.CENTRAL;
 		this.jugador = createMock(Jugador.class);
-		
-		
 		this.titular= new Titular(this.posicion, this.jugador);
 	}
-	protected void tearDown()
-	{
+	
+	protected void tearDown(){
 		this.posicion = null;
 		this.jugador = null;
-		
-		
 		this.titular= null;
 	}
 	
-	public void testTitular ()
-	{
+	public void testTitular (){
 		Assert.assertSame(this.posicion, this.titular.getPosicion());
 		Assert.assertSame(this.jugador, this.titular.getJugador());
 	}

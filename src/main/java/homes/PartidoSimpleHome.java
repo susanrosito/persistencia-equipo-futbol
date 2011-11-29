@@ -29,21 +29,9 @@ public class PartidoSimpleHome {
     public int getCantPartidosSimplesLocalesGanadosPor(final String nombre, final String nombre2) {
         Session session = HibernateManager.instance().getSession();
         
-       // Criteria criteria = session.createCriteria(PartidoSimple.class);
-
-        //Criteria criteriaEquipoA = criteria.createCriteria("equipoA");
-        //criteriaEquipoA.add(eq("nombre", nombre));
-
-        //Criteria criteriaEquipoB = criteria.createCriteria("equipoB");
-        //criteriaEquipoB.add(eq("nombre", nombre));
-
-        //criteria.add(geProperty("golesEquipoA", "golesEquipoB"));
-        //return criteria.list().size();
-        
          Query query = session .createQuery(
          "from PartidoSimple as ps where ps.equipoA.nombre = ? and ps.equipoB.nombre = ? and ps.golesEquipoA > ps.golesEquipoB "
          ); query.setString(0, nombre); query.setString(1, nombre2); return query.list().size();
-        
     }
 
     public int getCantPartidosSimplesVisitantesGanadosPor(final String nombre, final String nombre2) {
@@ -76,12 +64,8 @@ public class PartidoSimpleHome {
     
     public void save(PartidoSimple ps){
 		Session session = HibernateManager.instance().getSession();
-		
 		session.saveOrUpdate(ps);		
-		
 	}
-    
-  
     
 }
 

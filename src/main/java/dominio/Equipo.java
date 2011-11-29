@@ -8,15 +8,10 @@ import java.util.List;
 public class Equipo implements Nombrable {
 
     private int id;
-
     Tecnico tecnico;
-
     private String nombre;
-
     private List<Jugador> jugadores = new ArrayList<Jugador>();
-
     private int cantPartidosSimplesGanados = 0;
-
     private int cantPartidosDeCopaGanados = 0;
 
     public Equipo() {
@@ -40,7 +35,6 @@ public class Equipo implements Nombrable {
     
     public String toString(){
 		return this.nombre;
-    	
     }
 
     @Override

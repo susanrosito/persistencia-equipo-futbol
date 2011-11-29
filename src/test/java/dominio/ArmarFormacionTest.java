@@ -1,7 +1,6 @@
 package dominio;
 
 import junit.framework.TestCase;
-
 import commands.ArmarFormacionCommand;
 import commands.HibernateManager;
 

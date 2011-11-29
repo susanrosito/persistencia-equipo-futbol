@@ -11,7 +11,6 @@ public class FormacionHome {
 	
 	public void save(Formacion form){
 		Session session = HibernateManager.instance().getSession();
-		
 		session.saveOrUpdate(form);		
 		
 	}

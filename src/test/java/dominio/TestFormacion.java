@@ -12,7 +12,7 @@ import dominio.Titular;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-//Para mi esta al dope este test pero bue....lo reveo despues :P
+
 
 public class TestFormacion extends TestCase {
 	Titular mockTitular1;

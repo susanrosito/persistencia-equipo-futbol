@@ -3,7 +3,6 @@ package dominio;
 public class PartidoSimple extends Partido {
 
     private Formacion formacionA;
-
     private Formacion formacionB;
 
     public PartidoSimple(final Equipo a, final Equipo b) {
@@ -13,7 +12,7 @@ public class PartidoSimple extends Partido {
     }
 
     public PartidoSimple() {
-    };
+    }
 
     public Formacion getFormacionA() {
         return this.formacionA;

@@ -5,11 +5,8 @@ import java.util.List;
 public class Formacion {
 
     private List<Titular> Titulares;
-
     private List<Jugador> Suplentes;
-
     private Equipo equipo;
-
     private int id;
 
     public Formacion() {

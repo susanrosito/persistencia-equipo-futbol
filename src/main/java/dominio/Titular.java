@@ -3,11 +3,8 @@ package dominio;
 public class Titular {
 
     private Jugador jugador;
-
     private int id;
-
     private Posicion posicion;
-
     public Titular() {
     }
 

@@ -8,8 +8,6 @@ import commands.HibernateManager;
 
 public class Home {
 	
-
-	
 	private Session session;
 
 	public void setSession(Session session) {

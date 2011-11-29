@@ -3,29 +3,22 @@ package dominio;
 public class Partido {
 
     private Equipo equipoA;
-
     private Equipo equipoB;
-
     private int golesEquipoA;
-
     private int golesEquipoB;
-
     private int id;
 
     public Partido(final Equipo a, final Equipo b) {
-
         this.equipoA = a;
         this.equipoB = b;
         this.golesEquipoA = 0;
         this.golesEquipoB = 0;
-
     }
 
     public Partido() {
     }
 
     public Equipo getGanadorP() {
-
         if (this.golesEquipoA > this.golesEquipoB) {
             this.equipoA.setCantPartidosSimplesGanados(this.equipoA.getCantPartidosSimplesGanados() + 1);
             return this.equipoA;
@@ -37,10 +30,9 @@ public class Partido {
                 return null;
             }
         }
-
     }
 
-   // public void incrementarCantPartidosSimplesGanadosPor(Equipo equipo) {
+   //  ?? public void incrementarCantPartidosSimplesGanadosPor(Equipo equipo) {
 	//	equipo.setCantPartidosSimplesGanados(equipo.getCantPartidosSimplesGanados()+1);
 		
 //	}

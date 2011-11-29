@@ -6,9 +6,7 @@ import interfaces.Nombrable;
 public class Tecnico implements Nombrable {
 
     private int id;
-
     private String nombre;
-
     private FormacionStrategy formacionStrategy;
 
     public Tecnico(final String nombre, final FormacionStrategy fsi) {
@@ -17,7 +15,6 @@ public class Tecnico implements Nombrable {
     }
 
     public Tecnico() {
-
     }
 
     @Override
@@ -48,5 +45,4 @@ public class Tecnico implements Nombrable {
     public int getId() {
         return this.id;
     }
-
 }

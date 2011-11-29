@@ -5,9 +5,7 @@ import interfaces.Habilidad;
 public class HabilidadImp implements Habilidad {
 
     Posicion posicion;
-
     int valor;
-
     int id;
 
     public HabilidadImp() {
@@ -36,7 +34,6 @@ public class HabilidadImp implements Habilidad {
 
     @Override
     public int getValor(final Posicion p) {
-
         if (p == this.getPosicion()) {
             return this.valor;
         } else {

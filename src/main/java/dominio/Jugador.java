@@ -9,21 +9,11 @@ import java.util.Set;
 
 public class Jugador implements Nombrable, Habilidad {
     private String nombre;
-
     private Set<HabilidadImp> habilidades;
-
     private Equipo equipo;
-
-    public Equipo getEquipo() {
-        return this.equipo;
-    }
-
-    public void setEquipo(final Equipo equipo) {
-        this.equipo = equipo;
-    }
-
     private int id;
-
+    
+   
     public Jugador() {
         this.habilidades = new HashSet<HabilidadImp>();
     }
@@ -31,11 +21,6 @@ public class Jugador implements Nombrable, Habilidad {
     public Jugador(final String nomb, final HashSet<HabilidadImp> habs) {
         this.nombre = nomb;
         this.habilidades = habs;
-    }
-
-    @Override
-    public String getNombre() {
-        return this.nombre;
     }
 
     @Override
@@ -76,9 +61,21 @@ public class Jugador implements Nombrable, Habilidad {
     public void setId(final int id) {
         this.id = id;
     }
+    @Override
+    public String getNombre() {
+        return this.nombre;
+    }
 
     public void setNombre(final String nombre) {
         this.nombre = nombre;
+    }
+
+    public Equipo getEquipo() {
+        return this.equipo;
+    }
+
+    public void setEquipo(final Equipo equipo) {
+        this.equipo = equipo;
     }
 
 }
