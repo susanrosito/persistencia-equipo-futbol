@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost/persistencia</property>
+        <property name="hibernate.connection.username">hbm</property>
+        <property name="hibernate.connection.password">hbm</property>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+        
+        <mapping resource="Jugador.hbm.xml"></mapping>
+		<mapping resource="Habilidad.hbm.xml"></mapping>
+		<mapping resource="Equipo.hbm.xml"></mapping>
+        <mapping resource="Tecnico.hbm.xml"></mapping>
+		<mapping resource="Titular.hbm.xml"></mapping>
+		<mapping resource="Partido.hbm.xml"></mapping>
+		<mapping resource="Formacion.hbm.xml"></mapping>
+		<mapping resource="FormacionStrategy.hbm.xml"></mapping>
+    </session-factory>
+</hibernate-configuration>

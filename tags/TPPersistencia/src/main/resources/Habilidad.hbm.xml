@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<typedef name="Posicion" class="org.hibernate.type.EnumType">
+		<param name="enumClass">dominio.Posicion</param>
+	</typedef>
+
+	<class name="interfaces.Habilidad" table="Habilidades">
+		<id name="id" type="java.lang.Integer">
+			<column name="Habilidad_ID" />
+			<generator class="sequence" />
+		</id>
+
+		<discriminator column="TIPO_HABILIDAD" type="string" />
+
+		<subclass name="dominio.HabilidadImp" discriminator-value="H_IMP">
+
+			<property name="valor" type="int">
+				<column name="H_VALOR" not-null="false" unique="false" />
+			</property>
+
+			<property name="posicion" type="Posicion">
+				<column name="H_POSICION" not-null="true" unique="false" />
+			</property>
+
+		</subclass>
+	</class>
+</hibernate-mapping>
