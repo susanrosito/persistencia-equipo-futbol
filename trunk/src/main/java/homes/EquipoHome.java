@@ -11,7 +11,6 @@ import org.hibernate.criterion.Expression;
 import commands.HibernateManager;
 
 import dominio.Equipo;
-import dominio.PartidoSimple;
 
 
 /**
@@ -19,6 +18,7 @@ import dominio.PartidoSimple;
  */
 
 public class EquipoHome {
+	
 	
 	public Equipo getByName(final String nombre) {
 		   Session session = HibernateManager.instance().getSession();
