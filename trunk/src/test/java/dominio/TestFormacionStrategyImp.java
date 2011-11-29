@@ -27,14 +27,8 @@ public class TestFormacionStrategyImp extends TestCase {
     ArrayList<Posicion> posiciones;
     ArrayList<Titular> titulares;
     
-    Jugador jugadorEn;
-    Jugador jugadorUr;
     Jugador jugadorAr;
     Jugador jugadorVe;
-    Jugador jugadorSe;
-    Jugador jugadorDe;
-    Jugador jugadorNy;
-    Jugador jugadorTi;
 
     Titular titularE;
     Titular titularV;
@@ -47,12 +41,6 @@ public class TestFormacionStrategyImp extends TestCase {
         this.equipo = createMock(Equipo.class);
         
         this.jugadorAr = createMock(Jugador.class);
-        this.jugadorDe = createMock(Jugador.class);
-        this.jugadorEn = createMock(Jugador.class);
-        this.jugadorNy = createMock(Jugador.class);
-        this.jugadorSe = createMock(Jugador.class);
-        this.jugadorTi = createMock(Jugador.class);
-        this.jugadorUr = createMock(Jugador.class);
         this.jugadorVe = createMock(Jugador.class);
 
         this.posiciones = new ArrayList<Posicion>();
@@ -65,8 +53,6 @@ public class TestFormacionStrategyImp extends TestCase {
 
         this.formacionImp = new FormacionStrategyImp(this.posiciones);
 
-        this.jugadores.add(this.jugadorDe);
-        this.jugadores.add(this.jugadorNy);
         this.jugadores.add(this.jugadorVe);
         this.jugadores.add(this.jugadorAr);
 
@@ -96,14 +82,12 @@ public class TestFormacionStrategyImp extends TestCase {
 
         expect(this.jugadorAr.getValor(Posicion.ARQUERO)).andReturn(6).times(2);
         expect(this.jugadorVe.getValor(Posicion.ARQUERO)).andReturn(10).times(2);
-        expect(this.jugadorDe.getValor(Posicion.ARQUERO)).andReturn(2).times(2);
-        expect(this.jugadorNy.getValor(Posicion.ARQUERO)).andReturn(9).times(2);
+       
 
         replay(this.titularE);
         replay(this.jugadorAr);
         replay(this.jugadorVe);
-        replay(this.jugadorDe);
-        replay(this.jugadorNy);
+       
 
         Assert.assertEquals(this.titularE.getJugador(),
                 this.formacionImp.buscarMJugador(this.jugadores, Posicion.ARQUERO).getJugador());
@@ -113,33 +97,23 @@ public class TestFormacionStrategyImp extends TestCase {
         verify(this.titularE);
         verify(this.jugadorAr);
         verify(this.jugadorVe);
-        verify(this.jugadorDe);
-        verify(this.jugadorNy);
     }
 
     public void testbuscarTitulares() {
 
         expect(this.jugadorAr.getValor(Posicion.ARQUERO)).andReturn(6).once();
         expect(this.jugadorVe.getValor(Posicion.ARQUERO)).andReturn(10).once();
-        expect(this.jugadorDe.getValor(Posicion.ARQUERO)).andReturn(2).once();
-        expect(this.jugadorNy.getValor(Posicion.ARQUERO)).andReturn(9).once();
 
         expect(this.jugadorAr.getValor(Posicion.LATERAL)).andReturn(10).once();
         expect(this.jugadorVe.getValor(Posicion.LATERAL)).andReturn(5).once();
-        expect(this.jugadorDe.getValor(Posicion.LATERAL)).andReturn(8).once();
-        expect(this.jugadorNy.getValor(Posicion.LATERAL)).andReturn(6).once();
 
         expect(this.jugadorAr.getValor(Posicion.VOLANTE_DEFENSIVO)).andReturn(0).once();
         expect(this.jugadorVe.getValor(Posicion.VOLANTE_DEFENSIVO)).andReturn(7).once();
-        expect(this.jugadorDe.getValor(Posicion.VOLANTE_DEFENSIVO)).andReturn(10).once();
-        expect(this.jugadorNy.getValor(Posicion.VOLANTE_DEFENSIVO)).andReturn(4).once();
 
         expect(this.formacion.getTitulares()).andReturn(this.titulares).times(5);
 
         replay(this.jugadorAr);
         replay(this.jugadorVe);
-        replay(this.jugadorDe);
-        replay(this.jugadorNy);
 
         replay(this.formacion);
 
@@ -149,8 +123,6 @@ public class TestFormacionStrategyImp extends TestCase {
         verify(this.formacion);
         verify(this.jugadorAr);
         verify(this.jugadorVe);
-        verify(this.jugadorDe);
-        verify(this.jugadorNy);
 
     }
 
@@ -160,36 +132,26 @@ public class TestFormacionStrategyImp extends TestCase {
 
         expect(this.jugadorAr.getValor(Posicion.ARQUERO)).andReturn(7).once();
         expect(this.jugadorVe.getValor(Posicion.ARQUERO)).andReturn(5).once();
-        expect(this.jugadorDe.getValor(Posicion.ARQUERO)).andReturn(9).once();
-        expect(this.jugadorNy.getValor(Posicion.ARQUERO)).andReturn(1).once();
 
         expect(this.jugadorAr.getValor(Posicion.LATERAL)).andReturn(0).once();
         expect(this.jugadorVe.getValor(Posicion.LATERAL)).andReturn(9).once();
-        expect(this.jugadorDe.getValor(Posicion.LATERAL)).andReturn(2).once();
-        expect(this.jugadorNy.getValor(Posicion.LATERAL)).andReturn(6).once();
 
         expect(this.jugadorAr.getValor(Posicion.VOLANTE_DEFENSIVO)).andReturn(9).once();
         expect(this.jugadorVe.getValor(Posicion.VOLANTE_DEFENSIVO)).andReturn(6).once();
-        expect(this.jugadorDe.getValor(Posicion.VOLANTE_DEFENSIVO)).andReturn(4).once();
-        expect(this.jugadorNy.getValor(Posicion.VOLANTE_DEFENSIVO)).andReturn(7).once();
 
-        expect(this.formacion.getSuplente(0)).andReturn(this.jugadorNy).once();
-
+        expect(this.formacion.getSuplente(0)).andReturn(this.jugadorVe).once();
+      
         replay(this.jugadorAr);
         replay(this.jugadorVe);
-        replay(this.jugadorDe);
-        replay(this.jugadorNy);
 
         replay(this.equipo);
         replay(this.formacion);
 
-        Assert.assertEquals(this.jugadores, this.equipo.getJugadores());
-        // Assert.assertEquals(this.formacion.getTitulares(),
-        // this.formacionImp.armarFormacion(this.equipo).getTitulares());
-        Assert.assertEquals(this.formacion.getSuplente(0), this.formacionImp.armarFormacion(this.equipo).getSuplente(0));
+       Assert.assertEquals(this.jugadores, this.equipo.getJugadores());
+       Assert.assertEquals(this.formacion.getSuplente(0), this.formacionImp.armarFormacion(this.equipo).getSuplente(0));
 
         verify(this.equipo);
         verify(this.formacion);
-
     }
+    
 }
