@@ -20,11 +20,7 @@
 			 <key column="equipo" ></key>
 			 <one-to-many class="dominio.Jugador"/>
     	</bag>
-   		
-		<property name="cantPartidosSimplesGanados" type="int">
-			<column name="E_CantPSGanados" not-null="false" unique="false" />
-		</property>
-   		
+   	
    		<property name="cantPartidosDeCopaGanados" type="int">
 			<column name="E_CantPDCGanados" not-null="false" unique="false" />
 		</property>
